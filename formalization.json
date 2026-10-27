@@ -1,0 +1,69 @@
+{
+  "format": "sl2-formalization-catalogue-v1",
+  "release": "vfinal",
+  "package_version": "1.0.0",
+  "lean_project": "lean",
+  "toolchain": "leanprover/lean4:v4.36.0-rc1",
+  "scope_document": "docs/SCOPE.md",
+  "declaration_guide": "docs/DECLARATIONS.md",
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "declarations": [
+    {
+      "id": "main_theorem",
+      "declaration": "KhanSL2.mainStatement",
+      "file": "lean/MainProof.lean",
+      "description": "Unconditional proof of the specified-map isomorphism.",
+      "paper_result": "Theorem 1.1"
+    },
+    {
+      "id": "explicit_main_theorem",
+      "declaration": "KhanSL2.mainStatement_explicit",
+      "file": "lean/Final.lean",
+      "description": "Same proposition with source, target, operations and map displayed."
+    },
+    {
+      "id": "main_proposition",
+      "declaration": "KhanSL2.MainStatement",
+      "file": "lean/KhanSL2/MainStatement.lean",
+      "description": "The proposition; this definition alone is not a proof."
+    },
+    {
+      "id": "canonical_map",
+      "declaration": "KhanSL2.phi",
+      "file": "lean/KhanSL2/CanonicalMap.lean",
+      "description": "The specified canonical linear map."
+    },
+    {
+      "id": "map_bijective",
+      "declaration": "KhanSL2.phi_bijective",
+      "file": "lean/MainProof.lean",
+      "description": "Bijectivity of the original canonical map."
+    },
+    {
+      "id": "factorization",
+      "declaration": "KhanSL2.Collision.kFactor",
+      "file": "lean/KhanSL2/Collision/Proof.lean",
+      "description": "Factorization of coefficient homology on coprime charts."
+    }
+  ],
+  "verification": {
+    "native_target": "FinalAudit",
+    "full_windows": "./verify.ps1 -Serial",
+    "full_unix": "bash scripts/verify.sh",
+    "status": "verification/STATUS.md",
+    "frozen_baseline": "verification/reference.zip",
+    "instructions": "verification/README.md"
+  },
+  "paper": {
+    "title": "Lie Algebra Cohomology and Seiberg-Witten Theory",
+    "author": "Ahsan Z. Khan",
+    "date": "2026-10-25",
+    "status": "working draft",
+    "file": "paper/Pure_SU2_PVA_Proof.pdf",
+    "main_result": "Theorem 1.1"
+  }
+}

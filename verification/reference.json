@@ -1,0 +1,15 @@
+{
+  "archive": "reference.zip",
+  "archive_sha256": "3dfcdee24cbebfdbb9e5496295a797a52d7c4718e020808b8e0f36389b5a1fc1",
+  "archive_root": "frozen-specification",
+  "lean_toolchain": "leanprover/lean4:v4.36.0-rc1",
+  "module": "MainProofAudit",
+  "theorem": "KhanSL2.mainStatement",
+  "lean_source_files": 1046,
+  "files": 1049,
+  "provenance": {
+    "original_archive_sha256": "296da4ab99530b505688608ee732502867fc5dc253529add146eafda04d14453",
+    "selection": "Every original Lean source plus lakefile.toml, lake-manifest.json and lean-toolchain; source bytes unchanged."
+  },
+  "purpose": "Frozen, proof-bearing formal specification. Comparing with it checks preservation of the formal statement and its dependent definitions, not the English interpretation."
+}

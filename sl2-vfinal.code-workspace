@@ -1,0 +1,20 @@
+{
+  "folders": [
+    {
+      "name": "Lean project",
+      "path": "lean"
+    },
+    {
+      "name": "Guide and verification",
+      "path": "."
+    }
+  ],
+  "settings": {
+    "files.exclude": {
+      "**/.lake": true
+    },
+    "search.exclude": {
+      "**/.lake": true
+    }
+  }
+}

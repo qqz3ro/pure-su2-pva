@@ -1,0 +1,113 @@
+name = "sl2_injectivity"
+version = "1.0.0"
+defaultTargets = ["KhanSL2", "Audit", "SourceAudit", "TargetAudit", "CanonicalAudit", "InjectivityAudit", "BGG", "BGGAudit", "DictionaryAudit", "BGGBridge", "BGGBridgeAudit", "ModuleAudit", "Depth", "DepthAudit", "Conditional", "ConditionalAudit", "Deformation", "DeformationAudit", "MergeCheck", "KhanSL2All", "IntegrationAudit", "ReviewChecks", "Macdonald", "MacdonaldAudit", "StrongMacdonald", "StrongMacdonaldAudit", "Collision", "CollisionAudit", "MainProof", "MainProofAudit", "Final", "FinalAudit"]
+moreLeanArgs = ["-DwarningAsError=true", "-Dlinter.unusedSimpArgs=false", "-Dlinter.deprecated=false"]
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4.git"
+rev = "2cabef97b63d3275776b8b060d802de6a6fa1055"
+
+[[require]]
+name = "TauCeti"
+git = "https://github.com/TauCetiProject/TauCeti.git"
+rev = "69cd1ab4dcfbb6676e344f3f193e63473eab5a3d"
+
+[[lean_lib]]
+name = "KhanSL2"
+
+[[lean_lib]]
+name = "Audit"
+
+[[lean_lib]]
+name = "SourceAudit"
+
+[[lean_lib]]
+name = "TargetAudit"
+
+[[lean_lib]]
+name = "CanonicalAudit"
+
+[[lean_lib]]
+name = "InjectivityAudit"
+
+
+
+[[lean_lib]]
+name = "BGG"
+
+[[lean_lib]]
+name = "BGGAudit"
+
+[[lean_lib]]
+name = "DictionaryAudit"
+
+[[lean_lib]]
+name = "KhanSL2All"
+
+[[lean_lib]]
+name = "IntegrationAudit"
+
+[[lean_lib]]
+name = "ReviewChecks"
+
+[[lean_lib]]
+name = "BGGBridge"
+
+[[lean_lib]]
+name = "BGGBridgeAudit"
+
+[[lean_lib]]
+name = "ModuleAudit"
+
+[[lean_lib]]
+name = "MergeCheck"
+
+[[lean_lib]]
+name = "Depth"
+
+[[lean_lib]]
+name = "DepthAudit"
+
+[[lean_lib]]
+name = "Conditional"
+
+[[lean_lib]]
+name = "ConditionalAudit"
+
+[[lean_lib]]
+name = "Deformation"
+
+[[lean_lib]]
+name = "DeformationAudit"
+
+[[lean_lib]]
+name = "Macdonald"
+
+[[lean_lib]]
+name = "MacdonaldAudit"
+
+
+[[lean_lib]]
+name = "StrongMacdonald"
+
+[[lean_lib]]
+name = "StrongMacdonaldAudit"
+
+[[lean_lib]]
+name = "Collision"
+
+[[lean_lib]]
+name = "CollisionAudit"
+
+[[lean_lib]]
+name = "MainProof"
+
+[[lean_lib]]
+name = "MainProofAudit"
+
+[[lean_lib]]
+name = "Final"
+
+[[lean_lib]]
+name = "FinalAudit"

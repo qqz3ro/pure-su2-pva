@@ -1,0 +1,3 @@
+# Preserve source bytes used by the verification manifests.
+* -text
+*.zip binary

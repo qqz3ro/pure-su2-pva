@@ -1,0 +1,530 @@
+Final source verification started: 2026-10-27T13:45:54.4617997Z
+ℹ [2771/2929] Replayed KhanSL2.SourceBracket
+info: KhanSL2/SourceBracket.lean:150:2: Try this:
+  [apply] abel_nf
+ℹ [5293/5338] Replayed SourceAudit
+info: SourceAudit.lean:67:0: KhanSL2.source_isPVA : KhanSL2.IsPVA KhanSL2.sourceData KhanSL2.Source.bracket
+info: SourceAudit.lean:68:0: KhanSL2.source_pva_exists : ∃ br, KhanSL2.IsPVA KhanSL2.sourceData br ∧ KhanSL2.IsSourceBracket br
+info: SourceAudit.lean:69:0: PASS: 1135 kernel-safe source declarations audited; no additional axioms.
+info: SourceAudit.lean:69:0: The complete source PVA theorem is proved independently of the cohomology target.
+info: SourceAudit.lean:70:0: 'KhanSL2.source_isPVA' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: SourceAudit.lean:71:0: 'KhanSL2.source_pva_exists' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [5296/5338] Replayed TargetAudit
+info: TargetAudit.lean:112:0: KhanSL2.q_square_zero (u : KhanSL2.Cochain) : KhanSL2.q (KhanSL2.q u) = 0
+info: TargetAudit.lean:113:0: KhanSL2.relativeComplex_laws : KhanSL2.RelativeComplexLaws
+info: TargetAudit.lean:114:0: KhanSL2.target_isPVA : KhanSL2.IsPVA KhanSL2.targetData KhanSL2.targetBracket
+info: TargetAudit.lean:115:0: KhanSL2.target_isInduced : KhanSL2.IsInducedOnCohomology KhanSL2.BC.bracket KhanSL2.targetData KhanSL2.targetBracket
+info: TargetAudit.lean:116:0: PASS: 1830 kernel-safe target-foundation declarations audited; no additional axioms.
+info: TargetAudit.lean:116:0: The concrete CE complex and induced target PVA are proved independently of MainStatement.
+info: TargetAudit.lean:117:0: 'KhanSL2.q_square_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TargetAudit.lean:118:0: 'KhanSL2.relativeComplex_laws' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TargetAudit.lean:119:0: 'KhanSL2.target_isPVA' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TargetAudit.lean:120:0: 'KhanSL2.target_isInduced' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [5299/5338] Replayed CanonicalAudit
+info: CanonicalAudit.lean:153:0: KhanSL2.phi : KhanSL2.Source →ₗ[ℂ] KhanSL2.Cohomology
+info: CanonicalAudit.lean:154:0: KhanSL2.phi_well_defined {a b : KhanSL2.SourcePresentation.Expression} (h : KhanSL2.SourcePresentation.Relation a b) :
+  KhanSL2.phiExpression a = KhanSL2.phiExpression b
+info: CanonicalAudit.lean:155:0: KhanSL2.phi_X0 : KhanSL2.phi (KhanSL2.Source.X 0) = KhanSL2.xClass
+info: CanonicalAudit.lean:156:0: KhanSL2.phi_Y0 : KhanSL2.phi (KhanSL2.Source.Y 0) = KhanSL2.yClass
+info: CanonicalAudit.lean:157:0: KhanSL2.phiPVAMap : KhanSL2.PVAMap KhanSL2.sourceData KhanSL2.Source.bracket KhanSL2.targetData KhanSL2.targetBracket
+info: CanonicalAudit.lean:158:0: KhanSL2.phi_unique (f : KhanSL2.Source →ₗ[ℂ] KhanSL2.Cohomology) (h1 : f 1 = KhanSL2.targetData.one)
+  (hm : ∀ (a b : KhanSL2.Source), f (a * b) = (KhanSL2.targetData.mul (f a)) (f b))
+  (hT : ∀ (a : KhanSL2.Source), f (KhanSL2.Source.translation a) = KhanSL2.targetData.translation (f a))
+  (hx : f (KhanSL2.Source.X 0) = KhanSL2.xClass) (hy : f (KhanSL2.Source.Y 0) = KhanSL2.yClass) : f = KhanSL2.phi
+info: CanonicalAudit.lean:159:0: PASS: 2650 kernel-safe declarations audited; no additional axioms.
+info: CanonicalAudit.lean:159:0: The explicit phi and all graded PVA morphism laws are constructed independently of MainStatement.
+info: CanonicalAudit.lean:160:0: 'KhanSL2.phi' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: CanonicalAudit.lean:161:0: 'KhanSL2.phi_bracket' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [5302/5338] Replayed InjectivityAudit
+info: InjectivityAudit.lean:217:0: KhanSL2.phi_injective : Function.Injective ⇑KhanSL2.phi
+info: InjectivityAudit.lean:218:0: KhanSL2.mainStatement_iff_surjective : KhanSL2.MainStatement ↔ Function.Surjective ⇑KhanSL2.phi
+info: InjectivityAudit.lean:221:0: PASS: 3950 safe project declarations; no sorryAx or additional axioms.
+info: InjectivityAudit.lean:222:0: 'KhanSL2.phi_injective' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: InjectivityAudit.lean:223:0: 'KhanSL2.mainStatement_iff_surjective' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [5325/5434] Replayed Audit
+info: Audit.lean:241:0: PASS: 4588 kernel-safe KhanSL2 declarations audited; no additional axioms.
+info: Audit.lean:241:0: This foundation audit checks the proposition and canonical map; MainProofAudit checks the completed theorem.
+info: Audit.lean:242:0: KhanSL2.phi : KhanSL2.Source →ₗ[ℂ] KhanSL2.Cohomology
+info: Audit.lean:243:0: KhanSL2.phi_well_defined {a b : KhanSL2.SourcePresentation.Expression} (h : KhanSL2.SourcePresentation.Relation a b) :
+  KhanSL2.phiExpression a = KhanSL2.phiExpression b
+info: Audit.lean:244:0: KhanSL2.phiPVAMap : KhanSL2.PVAMap KhanSL2.sourceData KhanSL2.Source.bracket KhanSL2.targetData KhanSL2.targetBracket
+info: Audit.lean:245:0: KhanSL2.mainStatement_iff_bijective : KhanSL2.MainStatement ↔ Function.Bijective ⇑KhanSL2.phi
+info: Audit.lean:246:0: 'KhanSL2.MainStatement' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Audit.lean:247:0: 'KhanSL2.phi' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [7486/7582] Replayed KhanSL2.BGG.PositiveCEGrading
+info: KhanSL2/BGG/PositiveCEGrading.lean:35:76: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+ℹ [7744/7779] Replayed DictionaryAudit
+info: DictionaryAudit.lean:241:0: fun L M [LieRing L] [LieAlgebra ℂ L] [AddCommGroup M] [_root_.Module ℂ M] [LieRingModule L M] [LieModule ℂ L M] ξ =>
+  LieChains.boundary_boundary
+    ξ : ∀ (L M : Type) [inst : LieRing L] [inst_1 : LieAlgebra ℂ L] [inst_2 : AddCommGroup M]
+  [inst_3 : _root_.Module ℂ M] [inst_4 : LieRingModule L M] [inst_5 : LieModule ℂ L M] (ξ : LieChains.Chains ℂ L M),
+  (LieChains.boundary M) ((LieChains.boundary M) ξ) = 0
+info: DictionaryAudit.lean:247:0: Phi_bijective : Function.Bijective ⇑Phi
+info: DictionaryAudit.lean:248:0: Phi_boundary : ∀ (ξ : GenChains), Phi ((LieChains.boundary NB) ξ) = boundary (Phi ξ)
+info: DictionaryAudit.lean:250:0: Phi_relTheta : ∀ (a : Fin 3) (ξ : GenChains), Phi ((relTheta a) ξ) = -(coaction a) (Phi ξ)
+info: DictionaryAudit.lean:253:0: relBoundary_relBoundary : ∀ (x : RelChains), relBoundary (relBoundary x) = 0
+info: DictionaryAudit.lean:254:0: mem_genPiece_iff : ∀ (p B : ℕ) (S : ℤ) (ξ : GenChains),
+  ξ ∈ genPiece (↑(B + p), ↑B, S) ↔ formDegree ξ = ↑p • ξ ∧ coeffDegree ξ = ↑B • ξ ∧ spin ξ = ↑S • ξ
+info: DictionaryAudit.lean:257:0: relHomologyEquivComplex : (d : Degree) → RelHomology d ≃ₗ[ℂ] RelComplexHomology d
+info: DictionaryAudit.lean:260:0: K_finiteDimensional : ∀ (p B : ℕ) (S : ℤ), FiniteDimensional ℂ (K p B S)
+info: DictionaryAudit.lean:261:0: dictionary : (p B : ℕ) → (S : ℤ) → ↥(cohomologyPiece (kDegree p B S)) ≃ₗ[ℂ] Module.Dual ℂ (K p B S)
+info: DictionaryAudit.lean:263:0: psiK_apply : ∀ (p B : ℕ) (S : ℤ) (k : K p B S) (a : ↥(Source.piece (kDegree p B S))),
+  ((psiK p B S) k) a = ((dictionary p B S) ((phiPiece (kDegree p B S)) a)) k
+info: DictionaryAudit.lean:265:0: psiK_surjective : ∀ (p B : ℕ) (S : ℤ), Function.Surjective ⇑(psiK p B S)
+info: DictionaryAudit.lean:266:0: milestoneM2 : ∀ (p B : ℕ) (S : ℤ),
+  FiniteDimensional ℂ (K p B S) ∧
+    Nonempty (↥(cohomologyPiece (kDegree p B S)) ≃ₗ[ℂ] Module.Dual ℂ (K p B S)) ∧ Function.Surjective ⇑(psiK p B S)
+info: DictionaryAudit.lean:271:0: PASS: 4565 safe project declarations; no sorryAx or additional axioms.
+info: DictionaryAudit.lean:272:0: 'KhanSL2.Current.milestoneM2' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: DictionaryAudit.lean:273:0: 'KhanSL2.Current.psiK_surjective' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: DictionaryAudit.lean:274:0: 'KhanSL2.Current.mem_genPiece_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: DictionaryAudit.lean:275:0: 'KhanSL2.Current.relHomologyEquivComplex' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: DictionaryAudit.lean:276:0: 'KhanSL2.LieChains.boundary_boundary' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [7753/7863] Replayed BGGAudit
+info: BGGAudit.lean:204:0: PASS: 3332 safe project declarations; no sorryAx or additional axioms.
+info: BGGAudit.lean:204:0: The actual graded relative BGG resolution, including all-degree exactness and relative projectivity, is proved.
+info: BGGAudit.lean:205:0: KhanSL2.BGG.relative_bgg_resolution.{u, v} : Nonempty KhanSL2.BGG.RelativeBGGResolution
+info: BGGAudit.lean:206:0: 'KhanSL2.BGG.relativeBGGResolution' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BGGAudit.lean:207:0: 'KhanSL2.BGG.relative_bgg_resolution' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BGGAudit.lean:208:0: 'KhanSL2.BGG.TermResolution.exact_energyDifferentials' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BGGAudit.lean:209:0: 'KhanSL2.BGG.RelativeCochains.cohomologyEquiv' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BGGAudit.lean:210:0: 'KhanSL2.BGG.RelativeCochains.inducedInvariantTensorEquiv' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BGGAudit.lean:212:0: 'KhanSL2.BGG.TermResolution.relative_admissibility' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [7845/7979] Replayed BGGBridgeAudit
+info: BGGBridgeAudit.lean:382:0: cN : (N : Type) →
+  [inst : AddCommGroup N] →
+    [inst_1 : _root_.Module ℂ N] →
+      [inst_2 : LieRingModule Current N] →
+        [inst_3 : LieModule ℂ Current N] → TauCeti.LinearSpecialContraction (dC N) (dH N)
+info: BGGBridgeAudit.lean:385:0: qcN : (N : Type) →
+  [inst : AddCommGroup N] →
+    [inst_1 : _root_.Module ℂ N] →
+      [inst_2 : LieRingModule Current N] →
+        [inst_3 : LieModule ℂ Current N] → TauCeti.LinearSpecialContraction (dCq N) (dHq N)
+info: BGGBridgeAudit.lean:403:0: dHq_comp_dHq : dHq NB ∘ₗ dHq NB = 0
+info: BGGBridgeAudit.lean:404:0: harmonicDegree_standard : ∀ (p : ℕ), Nonempty (↥(PositiveCE.harmonicDegree p) ≃ₗ⁅ℂ,↥G⁆ TauCeti.Sl2Std ℂ (2 * p))
+info: BGGBridgeAudit.lean:408:0: exteriorEquiv : ExteriorAlgebra ℂ ↥plus ≃ₐ[ℂ] PositiveCE.Cochain
+info: BGGBridgeAudit.lean:409:0: boundary_inclusion : ∀ (ω : PositiveCE.Cochain),
+  boundary (PositiveCE.inclusion ω) = PositiveCE.inclusion (PositiveCE.boundary ω)
+info: BGGBridgeAudit.lean:411:0: J_boundary : ∀ (ξ : GenChains), J ((LieChains.boundary NB) ξ) = (dC NB) (J ξ)
+info: BGGBridgeAudit.lean:412:0: map_J_genRelations : Submodule.map (↑J) genRelations = relC NB
+info: BGGBridgeAudit.lean:413:0: mem_genPiece_iff_J : ∀ (p B : ℕ) (S : ℤ) (ξ : GenChains), ξ ∈ genPiece (kDegree p B S) ↔ J ξ ∈ degWin p B S
+info: BGGBridgeAudit.lean:417:0: kEquivBGG : (p B : ℕ) → (S : ℤ) → K p B S ≃ₗ[ℂ] BGGHomology p B S
+info: BGGBridgeAudit.lean:420:0: finrank_K_trivial : ∀ (p : ℕ) (S : ℤ), Module.finrank ℂ (K p 0 S) = if p = 0 ∧ S = 0 then 1 else 0
+info: BGGBridgeAudit.lean:422:0: cohomology_B_zero : (∀ (p : ℕ) (S : ℤ), ¬(p = 0 ∧ S = 0) → cohomologyPiece (kDegree p 0 S) = ⊥) ∧
+  cohomologyPiece (kDegree 0 0 0) = ℂ ∙ classOf cochainOne one_mem_cycles
+info: BGGBridgeAudit.lean:425:0: milestoneBGGBridge : (∀ (p B : ℕ) (S : ℤ), Nonempty (K p B S ≃ₗ[ℂ] BGGHomology p B S)) ∧
+  dHq NB ∘ₗ dHq NB = 0 ∧
+    (∀ (p : ℕ), Nonempty (↥(PositiveCE.harmonicDegree p) ≃ₗ⁅ℂ,↥G⁆ TauCeti.Sl2Std ℂ (2 * p))) ∧
+      (∀ (p : ℕ) (S : ℤ), Module.finrank ℂ (K p 0 S) = if p = 0 ∧ S = 0 then 1 else 0) ∧
+        (∀ (p : ℕ) (S : ℤ), ¬(p = 0 ∧ S = 0) → cohomologyPiece (kDegree p 0 S) = ⊥) ∧
+          cohomologyPiece (kDegree 0 0 0) = ℂ ∙ classOf cochainOne one_mem_cycles
+info: BGGBridgeAudit.lean:433:0: PASS: 7321 safe project declarations; no sorryAx or additional axioms.
+info: BGGBridgeAudit.lean:434:0: 'KhanSL2.Current.milestoneBGGBridge' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BGGBridgeAudit.lean:435:0: 'KhanSL2.BGGBridge.kEquivBGG' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BGGBridgeAudit.lean:436:0: 'KhanSL2.BGGBridge.cohomology_B_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BGGBridgeAudit.lean:437:0: 'KhanSL2.BGGBridge.J_boundary' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BGGBridgeAudit.lean:439:0: bggTerm_eq_bot_of_lt : ∀ (B p : ℕ), B < p → ∀ (S : ℤ), bggTerm p B S = ⊥
+info: BGGBridgeAudit.lean:441:0: 'KhanSL2.BGGBridge.bggTerm_eq_bot_of_lt' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: BGGBridgeAudit.lean:443:0: KhanSL2.BGGBridge.coefficientBGGPower_dHq (m : ℕ) (z : HarmN NB ⧸ relH NB) :
+  (dHq NB) ((coefficientBGGPower m) z) = (coefficientBGGPower m) ((dHq NB) z)
+info: BGGBridgeAudit.lean:444:0: KhanSL2.BGGBridge.kEquivBGGHomology_coefficientKPower (m p B : ℕ) (S : ℤ) (x : K p B S) :
+  (kEquivBGGHomology p B (S + ↑m)) ((Modules.coefficientKPower m p B S) x) =
+    (coefficientBGGHomologyPower m p B S) ((kEquivBGGHomology p B S) x)
+info: BGGBridgeAudit.lean:445:0: 'KhanSL2.BGGBridge.kEquivBGGHomology_coefficientKPower' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [8266/8421] Replayed ModuleAudit
+info: ModuleAudit.lean:383:0: psiTotal_surjective : ∀ (B p : ℕ), Function.Surjective ⇑(psiTotal B p)
+info: ModuleAudit.lean:384:0: kTotalEquivBGG : (B p : ℕ) → KTotal B p ≃ₗ[ℂ] BGGHomologyTotal B p
+info: ModuleAudit.lean:385:0: sourceFunctional_restrict : ∀ (p B : ℕ) (spin : ℤ) (k : Current.K p B spin)
+  (a : ↥(Source.piece (Current.kDegree p B spin))), ((sourceFunctional p B spin) k) ↑a = ((Current.psiK p B spin) k) a
+info: ModuleAudit.lean:388:0: validSector_iff : ∀ (B p : ℕ), ValidSector B p ↔ ∃ s, B = p + 3 * s
+info: ModuleAudit.lean:389:0: fun {B p} => jb_eq_zero_of_invalid : ∀ {B p : ℕ}, ¬ValidSector B p → ∀ (q : JB B p), q = 0
+info: ModuleAudit.lean:390:0: nu_powerSum : ∀ (r s m : ℕ),
+  ↑((nu r s) (powerSum (r + 3 * s) m)) =
+    (MvPolynomial.rename Sum.inl) (MvPolynomial.psum (Fin r) ℂ m) +
+      3 * (MvPolynomial.rename Sum.inr) (MvPolynomial.psum (Fin s) ℂ m)
+info: ModuleAudit.lean:394:0: psiB_of_valid : ∀ (B p : ℕ) (h : ValidSector B p) (x : KTotal B p),
+  (psiB B p) x = (jToJB B p h) ((psiPolynomial p (sectorS B p)) ((kTotalCast h p) x))
+info: ModuleAudit.lean:396:0: KhanSL2.Modules.psiPolynomialSector_coeff_psiK (r s N : ℕ) (k : Current.K r (r + 3 * s) (sectorSpinBase r s + ↑N))
+  (a : SourceDual.TaylorIndex r s N) (ha : SourceDual.indexWeight a = N) :
+  (↑((psiPolynomialSector r s N) k)).coeff (SourceDual.exponent a) =
+    ((Current.psiK r (r + 3 * s) (sectorSpinBase r s + ↑N)) k) (taylorJetPiece r s N a ha) / SourceDual.jetFactorial a
+info: ModuleAudit.lean:397:0: psiPolynomialSector_homogeneous : ∀ (r s N : ℕ) (k : Current.K r (r + 3 * s) (sectorSpinBase r s + ↑N)),
+  MvPolynomial.IsHomogeneous (↑((psiPolynomialSector r s N) k)) N
+info: ModuleAudit.lean:400:0: PASS: 579 safe concrete-module declarations; no sorryAx or additional axioms.
+info: ModuleAudit.lean:401:0: 'KhanSL2.Modules.psiTotal_surjective' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModuleAudit.lean:402:0: 'KhanSL2.Modules.psiB' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModuleAudit.lean:403:0: 'KhanSL2.Modules.kTotalEquivBGG' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModuleAudit.lean:407:0: sourceDualEquiv : (B p : ℕ) → sourceDualTotal B p ≃ₗ[ℂ] JB B p
+info: ModuleAudit.lean:408:0: coefficientAction : (B p : ℕ) → R B →ₐ[ℂ] Module.End ℂ (KTotal B p)
+info: ModuleAudit.lean:409:0: psiBLinear : (B p : ℕ) → KTotal B p →ₗ[R B] JB B p
+info: ModuleAudit.lean:411:0: psiBLinear_surjective : ∀ (B p : ℕ), Function.Surjective ⇑(psiBLinear B p)
+info: ModuleAudit.lean:412:0: KhanSL2.Modules.psiBLinear_restrictScalars (B p : ℕ) : ↑ℂ (psiBLinear B p) = psiB B p
+info: ModuleAudit.lean:413:0: KhanSL2.Modules.psiB_eq_sourceDualEquiv_comp_psiTotal (B p : ℕ) : psiB B p = ↑(sourceDualEquiv B p) ∘ₗ psiTotal B p
+info: ModuleAudit.lean:414:0: KhanSL2.Modules.psiB_coefficientTotalPower (m B p : ℕ) (x : KTotal B p) :
+  (psiB B p) ((coefficientTotalPower m B p) x) = powerSum B m • (psiB B p) x
+info: ModuleAudit.lean:415:0: KhanSL2.Modules.depthJBEquiv (B p : ℕ) : ↥(Depth.JB B p) ≃ₛₗ[(elementaryAlgEquiv B).toRingEquiv.toRingHom] JB B p
+info: ModuleAudit.lean:416:0: 'KhanSL2.Modules.sourceDualEquiv' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModuleAudit.lean:417:0: 'KhanSL2.Modules.coefficientAction' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModuleAudit.lean:418:0: 'KhanSL2.Modules.psiBLinear_surjective' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ModuleAudit.lean:419:0: 'KhanSL2.Modules.depthJBEquiv' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [8272/8421] Replayed DepthAudit
+info: DepthAudit.lean:65:0: fun {R} [CommRing R] {C} [(p : ℕ) → AddCommGroup (C p)] [(p : ℕ) → _root_.Module R (C p)] {d} [IsNoetherianRing R]
+    {rs} =>
+  kernel_eq_zero_of_depth : ∀ {R : Type} [inst : CommRing R] {C : ℕ → Type} [inst_1 : (p : ℕ) → AddCommGroup (C p)]
+  [inst_2 : (p : ℕ) → _root_.Module R (C p)] {d : (p : ℕ) → C (p + 1) →ₗ[R] C p} [IsNoetherianRing R] {rs : List R},
+  RingTheory.Sequence.IsRegular R rs →
+    ∀ [∀ (p : ℕ), Module.Finite R (C p)] [∀ (p : ℕ), Module.Projective R (C p)],
+      (∀ (p : ℕ), rs.length < p → Subsingleton (C p)) →
+        (∀ (p : ℕ), d p ∘ₗ d (p + 1) = 0) →
+          ∀ (J : ℕ → Type) [inst_6 : (p : ℕ) → AddCommGroup (J p)] [inst_7 : (p : ℕ) → _root_.Module R (J p)]
+            (f : (p : ℕ) → homology C d p →ₗ[R] J p),
+            (∀ (p : ℕ), 2 ≤ p → p ≤ rs.length → Function.Surjective ⇑(f p)) →
+              (∀ (p : ℕ), ∃ n, ∀ x ∈ (f p).ker, ∀ a ∈ Ideal.ofList rs ^ n, a • x = 0) →
+                (∀ (p : ℕ), 2 ≤ p → p ≤ rs.length → ↑p ≤ (Ideal.ofList rs).depth ↧(J p)) →
+                  ∀ (p : ℕ), 2 ≤ p → (f p).ker = ⊥
+info: DepthAudit.lean:83:0: collisionGen_eq : ∀ (B : ℕ) (j : Fin B),
+  collisionGen B j = X j - C ↑(B.choose (↑j + 1)) * (C (1 / ↑B) * X ⟨0, ⋯⟩) ^ (↑j + 1)
+info: DepthAudit.lean:85:0: collisionIdeal_isRegular : ∀ (B : ℕ),
+  ∃ rs, Ideal.ofList rs = collisionIdeal B ∧ rs.length = B - 1 ∧ RingTheory.Sequence.IsRegular (RB B) rs
+info: DepthAudit.lean:89:0: nuStar_X : ∀ (B r s : ℕ) (j : Fin B),
+  (nuStar B r s) (X j) = (rename (tupleMap r s)) (esymm (Fin r ⊕ Fin s × Fin 3) ℂ (↑j + 1))
+info: DepthAudit.lean:108:0: depth_JB_ge : ∀ (B p : ℕ), 0 < p → p < B → ↑p ≤ (collisionIdeal B).depth ↧↥(JB B p)
+info: DepthAudit.lean:110:0: depth_J_ge : ∀ (B r s : ℕ), B = r + 3 * s → 1 ≤ s → ↑(r + s - 1) ≤ (collisionIdeal B).depth ↧↥(J B r s)
+info: DepthAudit.lean:114:0: source_kernel_eq_zero : ∀ (B : ℕ) (C : ℕ → Type) [inst : (p : ℕ) → AddCommGroup (C p)]
+  [inst_1 : (p : ℕ) → _root_.Module (RB B) (C p)] [∀ (p : ℕ), Module.Finite (RB B) (C p)]
+  [∀ (p : ℕ), Module.Projective (RB B) (C p)],
+  (∀ (p : ℕ), B - 1 < p → Subsingleton (C p)) →
+    ∀ (d : (p : ℕ) → C (p + 1) →ₗ[RB B] C p),
+      (∀ (p : ℕ), d p ∘ₗ d (p + 1) = 0) →
+        ∀ (ψ : (p : ℕ) → homology C d p →ₗ[RB B] ↥(JB B p)),
+          (∀ (p : ℕ), 2 ≤ p → p < B → Function.Surjective ⇑(ψ p)) →
+            (∀ (p : ℕ), ∃ n, ∀ x ∈ (ψ p).ker, ∀ a ∈ collisionIdeal B ^ n, a • x = 0) →
+              ∀ (p : ℕ), 2 ≤ p → p < B → (ψ p).ker = ⊥
+info: DepthAudit.lean:123:0: PASS: 358 safe project declarations; no sorryAx or additional axioms.
+info: DepthAudit.lean:124:0: 'KhanSL2.Depth.kernel_eq_zero_of_depth' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: DepthAudit.lean:125:0: 'KhanSL2.Depth.depth_JB_ge' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: DepthAudit.lean:126:0: 'KhanSL2.Depth.source_kernel_eq_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: DepthAudit.lean:127:0: 'KhanSL2.Depth.milestoneDepth' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [8421/8507] Replayed ConditionalAudit
+info: ConditionalAudit.lean:494:0: mainStatement_of_inputs : RemainingInputs → MainStatement
+info: ConditionalAudit.lean:495:0: psiB_bijective_of_inputs : RemainingInputs → ∀ (B p : ℕ), Function.Bijective ⇑(Modules.psiB B p)
+info: ConditionalAudit.lean:497:0: mainStatement_of_psiB_injective : (∀ (B p : ℕ), Function.Injective ⇑(Modules.psiB B p)) → MainStatement
+info: ConditionalAudit.lean:507:0: KhanSL2.Conditional.BGGComplex.homologyEquivK_mk_component (B p : ℕ) (x : ↥(BGGComplex.Cycles B p)) (S : ℤ) :
+  ((BGGComplex.homologyEquivK B p) (Submodule.Quotient.mk x)) S =
+    (Current.kEquivBGGHomology p B S).symm (Submodule.Quotient.mk (((BGGComplex.cyclesEquivSum B p) x) S))
+info: ConditionalAudit.lean:508:0: KhanSL2.Conditional.depthJBTopEquiv (B : ℕ) : ↥(Depth.JB B B) ≃ₗ[Depth.RB B] Depth.RB B
+info: ConditionalAudit.lean:509:0: structure KhanSL2.Conditional.RemainingInputs : Prop
+number of parameters: 0
+fields:
+  KhanSL2.Conditional.RemainingInputs.collisionSupport : CollisionSupportStep
+constructor:
+  KhanSL2.Conditional.RemainingInputs.mk (collisionSupport : CollisionSupportStep) : RemainingInputs
+info: ConditionalAudit.lean:510:0: def KhanSL2.Conditional.PolynomialBGGInput : Prop :=
+∀ (B : ℕ), BGGPolynomialProperties B
+info: ConditionalAudit.lean:511:0: structure KhanSL2.Conditional.BGGPolynomialProperties (B : ℕ) : Prop
+number of parameters: 1
+fields:
+  KhanSL2.Conditional.BGGPolynomialProperties.projective : ∀ (p : ℕ),
+      Module.Projective (CoefficientRing B) (BGGComplex.Term B p)
+constructor:
+  KhanSL2.Conditional.BGGPolynomialProperties.mk {B : ℕ}
+    (projective : ∀ (p : ℕ), Module.Projective (CoefficientRing B) (BGGComplex.Term B p)) : BGGPolynomialProperties B
+info: ConditionalAudit.lean:512:0: def KhanSL2.Conditional.LowDegreeStep : Prop :=
+∀ (B : ℕ), 0 < B → EarlierComparisons B → ∀ p ≤ 1, p < B → Function.Injective ⇑(Conditional.psi B p)
+info: ConditionalAudit.lean:513:0: def KhanSL2.Conditional.CollisionSupportStep : Prop :=
+∀ (B : ℕ),
+  0 < B →
+    EarlierComparisons B →
+      ∀ (p : ℕ),
+        2 ≤ p →
+          p < B →
+            Module.support (CoefficientRing B) ↥(Conditional.psi B p).ker ⊆
+              PrimeSpectrum.zeroLocus ↑(Depth.collisionIdeal B)
+info: ConditionalAudit.lean:514:0: PASS: 315 safe conditional-completion declarations; no sorryAx or additional axioms.
+info: ConditionalAudit.lean:514:0: RemainingInputs is an explicit hypothesis, not a proved fact or an axiom.
+info: ConditionalAudit.lean:515:0: 'KhanSL2.Conditional.mainStatement_of_inputs' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ConditionalAudit.lean:516:0: 'KhanSL2.Conditional.psiB_bijective_of_inputs' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ConditionalAudit.lean:517:0: 'KhanSL2.Conditional.BGGComplex.homologyEquivK' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ConditionalAudit.lean:518:0: 'KhanSL2.Conditional.depthJBTopEquiv' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ConditionalAudit.lean:520:0: BGGBridge.bggTerm_eq_bot_of_lt : ∀ (B p : ℕ), B < p → ∀ (S : ℤ), BGGBridge.bggTerm p B S = ⊥
+info: ConditionalAudit.lean:522:0: BGGComplex.term_subsingleton_of_lt : ∀ (B p : ℕ), B < p → Subsingleton (BGGComplex.Term B p)
+info: ConditionalAudit.lean:524:0: psi_above_injective : ∀ (B p : ℕ), B < p → Function.Injective ⇑(Conditional.psi B p)
+info: ConditionalAudit.lean:526:0: 'KhanSL2.BGGBridge.bggTerm_eq_bot_of_lt' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ConditionalAudit.lean:527:0: 'KhanSL2.Conditional.psi_above_injective' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ConditionalAudit.lean:530:0: BGGComplex.coefficientAction : (B p : ℕ) → CoefficientRing B →ₐ[ℂ] Module.End ℂ (BGGComplex.Term B p)
+info: ConditionalAudit.lean:533:0: BGGComplex.differential_smul : ∀ (B p : ℕ) (a : CoefficientRing B) (x : BGGComplex.Term B (p + 1)),
+  (BGGComplex.differential B p) (a • x) = a • (BGGComplex.differential B p) x
+info: ConditionalAudit.lean:537:0: canonicalComparison_smul : ∀ (B p : ℕ) (a : CoefficientRing B) (x : BGGHomology B p),
+  (canonicalComparison B p) (a • x) = a • (canonicalComparison B p) x
+info: ConditionalAudit.lean:541:0: bggHomologyEquiv : (B p : ℕ) → BGGHomology B p ≃ₗ[CoefficientRing B] K B p
+info: ConditionalAudit.lean:549:0: 'KhanSL2.Conditional.BGGComplex.differential_smul' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ConditionalAudit.lean:550:0: 'KhanSL2.Conditional.canonicalComparison_smul' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ConditionalAudit.lean:551:0: 'KhanSL2.Conditional.bggHomologyEquiv' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ConditionalAudit.lean:556:0: PolynomialBGG.bggTerm_finite : ∀ (B p : ℕ), Module.Finite (CoefficientRing B) (BGGComplex.Term B p)
+info: ConditionalAudit.lean:559:0: PolynomialBGG.bggTerm_projective : ∀ (B p : ℕ), Module.Projective (CoefficientRing B) (BGGComplex.Term B p)
+info: ConditionalAudit.lean:562:0: mainStatement_of_collisionSupport : CollisionSupportStep → MainStatement
+info: ConditionalAudit.lean:564:0: 'KhanSL2.PolynomialBGG.rootPolynomial_free' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ConditionalAudit.lean:565:0: 'KhanSL2.PolynomialBGG.bggTerm_finite' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ConditionalAudit.lean:566:0: 'KhanSL2.PolynomialBGG.bggTerm_projective' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ConditionalAudit.lean:567:0: 'KhanSL2.Conditional.mainStatement_of_collisionSupport' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ConditionalAudit.lean:570:0: topTermEquiv : (B : ℕ) → BGGComplex.Term B B ≃ₗ[CoefficientRing B] CoefficientRing B
+info: ConditionalAudit.lean:573:0: psi_top_injective : ∀ (B : ℕ), Function.Injective ⇑(Conditional.psi B B)
+info: ConditionalAudit.lean:575:0: 'KhanSL2.Conditional.topTermEquiv' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ConditionalAudit.lean:576:0: 'KhanSL2.Conditional.BGGComplex.topGenerator_surjective' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ConditionalAudit.lean:577:0: 'KhanSL2.Conditional.psi_top_injective' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ConditionalAudit.lean:580:0: lowDegreeStep : LowDegreeStep
+info: ConditionalAudit.lean:583:0: 'KhanSL2.lowDegreeStep' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ConditionalAudit.lean:586:0: PolynomialBGG.rootPolynomial_free : ∀ (n : ℕ), Module.Free (Depth.RB n) (PolynomialBGG.RootPolynomial n)
+info: ConditionalAudit.lean:588:0: bgg_top_differential_zero : ∀ (B : ℕ), 0 < B → bggDifferential B (B - 1) = 0
+info: ConditionalAudit.lean:590:0: psi_injective_of_collisionSupport : CollisionSupportStep → ∀ (B p : ℕ), Function.Injective ⇑(Conditional.psi B p)
+info: ConditionalAudit.lean:593:0: psiB_bijective_of_collisionSupport : CollisionSupportStep → ∀ (B p : ℕ), Function.Bijective ⇑(Modules.psiB B p)
+ℹ [8431/8507] Replayed DeformationAudit
+info: DeformationAudit.lean:498:0: def KhanSL2.Conditional.LowDegreeStep : Prop :=
+∀ (B : ℕ), 0 < B → EarlierComparisons B → ∀ p ≤ 1, p < B → Function.Injective ⇑(Conditional.psi B p)
+info: DeformationAudit.lean:499:0: lowDegreeStep : LowDegreeStep
+info: DeformationAudit.lean:500:0: structure KhanSL2.Conditional.TwoRemainingInputs : Prop
+number of parameters: 0
+fields:
+  KhanSL2.Conditional.TwoRemainingInputs.polynomialBGG : PolynomialBGGInput
+  KhanSL2.Conditional.TwoRemainingInputs.collisionSupport : CollisionSupportStep
+constructor:
+  KhanSL2.Conditional.TwoRemainingInputs.mk (polynomialBGG : PolynomialBGGInput)
+    (collisionSupport : CollisionSupportStep) : TwoRemainingInputs
+info: DeformationAudit.lean:501:0: mainStatement_of_twoInputs : TwoRemainingInputs → MainStatement
+info: DeformationAudit.lean:502:0: remainingInputs_iff_two : RemainingInputs ↔ TwoRemainingInputs
+info: DeformationAudit.lean:503:0: psi_injective_iff_surj : ∀ (B p : ℕ),
+  Function.Injective ⇑(Conditional.psi B p) ↔ ∀ (S : ℤ), Surj (Current.kDegree p B S)
+info: DeformationAudit.lean:505:0: def KhanSL2.Surj : Degree → Prop :=
+fun d => ∀ (u : Cochain) (hu : u ∈ relativeCycles), u ∈ cochainPiece d → ∃ a ∈ Source.piece d, phi a = classOf u hu
+info: DeformationAudit.lean:506:0: @totalZero_exact : ∀ {n T : ℤ},
+  T ≠ 0 →
+    ∀ {z : Cochain},
+      (∀ (e : Fin 3), (colorAction e) z = 0) →
+        z ∈ gPiece coarse (n, T) →
+          q z + (delta 0) z = 0 →
+            ∃ w ∈ gPiece coarse (n - 1, T), (∀ (e : Fin 3), (colorAction e) w = 0) ∧ z = q w + (delta 0) w
+info: DeformationAudit.lean:507:0: @totalOne_exact : ∀ {N : ℕ} {e : ℤ},
+  e ≠ 0 →
+    ∀ {z : Cochain},
+      z ∈ relativeInvariants →
+        z ∈ energyOnePiece N e →
+          totalOne z = 0 → ∃ w ∈ relativeInvariants, w ∈ energyOnePiece (N - 1) e ∧ z = totalOne w
+info: DeformationAudit.lean:508:0: @dpp_exact : ∀ {n T : ℤ},
+  T ≠ 0 →
+    ∀ {u : Cochain},
+      u ∈ gPiece coarse (n, T) →
+        (∀ (e : Fin 3), (colorAction e) u = 0) →
+          dpp u = 0 → ∃ w ∈ gPiece coarse (n - 1, T), (∀ (e : Fin 3), (colorAction e) w = 0) ∧ u = dpp w
+info: DeformationAudit.lean:509:0: splitMap_D0 : ∀ (u : Cochain), splitMap (q u + (delta 0) u) = dpp (splitMap u) + Aop (splitMap u)
+info: DeformationAudit.lean:510:0: PASS: 1198 safe deformation-step declarations; no sorryAx or additional axioms.
+info: DeformationAudit.lean:510:0: LowDegreeStep and PolynomialBGGInput are proved; the legacy TwoRemainingInputs is equivalent to collision support alone.
+info: DeformationAudit.lean:511:0: 'KhanSL2.lowDegreeStep' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: DeformationAudit.lean:512:0: 'KhanSL2.Conditional.mainStatement_of_twoInputs' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: DeformationAudit.lean:513:0: 'KhanSL2.totalZero_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: DeformationAudit.lean:514:0: 'KhanSL2.totalOne_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: DeformationAudit.lean:517:0: lowDegreeStep : LowDegreeStep
+info: DeformationAudit.lean:520:0: 'KhanSL2.lowDegreeStep' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: DeformationAudit.lean:522:0: topTermEquiv : (B : ℕ) → BGGComplex.Term B B ≃ₗ[CoefficientRing B] CoefficientRing B
+info: DeformationAudit.lean:525:0: 'KhanSL2.Conditional.topTermEquiv' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [8434/8507] Replayed MergeCheck
+info: MergeCheck.lean:25:0: KhanSL2.BGG.relative_bgg_resolution : Nonempty KhanSL2.BGG.RelativeBGGResolution
+info: MergeCheck.lean:26:0: KhanSL2.BGG.RelativeCochains.cohomologyEquiv : (M : Type u_1) →
+  [inst : AddCommGroup M] →
+    [inst_1 : Module ℂ M] →
+      [inst_2 : Module KhanSL2.BGG.Enveloping M] →
+        [inst_3 : IsScalarTower ℂ KhanSL2.BGG.Enveloping M] →
+          (p : ℕ) → KhanSL2.BGG.RelativeCochains.Cohomology M p ≃ₗ[ℂ] KhanSL2.BGG.RelativeCochains.BGGCohomology M p
+info: MergeCheck.lean:27:0: KhanSL2.Current.milestoneM2 : ∀ (p B : ℕ) (S : ℤ),
+  FiniteDimensional ℂ (KhanSL2.Current.K p B S) ∧
+    Nonempty
+        (↥(KhanSL2.cohomologyPiece (KhanSL2.Current.kDegree p B S)) ≃ₗ[ℂ] Module.Dual ℂ (KhanSL2.Current.K p B S)) ∧
+      Function.Surjective ⇑(KhanSL2.Current.psiK p B S)
+ℹ [9923/9952] Replayed ReviewChecks
+info: ReviewChecks.lean:40:0: KhanSL2.phi_injective : Function.Injective ⇑KhanSL2.phi
+info: ReviewChecks.lean:41:0: KhanSL2.mainStatement_iff_surjective : KhanSL2.MainStatement ↔ Function.Surjective ⇑KhanSL2.phi
+info: ReviewChecks.lean:43:0: @[expose] def KhanSL2.MainStatement : Prop :=
+KhanSL2.IsGradedDifferentialPVAIsomorphism KhanSL2.sourceData KhanSL2.Source.bracket KhanSL2.targetData
+  KhanSL2.targetBracket KhanSL2.phi
+info: ReviewChecks.lean:44:0: 'KhanSL2.phi_injective' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ReviewChecks.lean:45:0: 'KhanSL2.Review.mainStatement_iff_v1' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ReviewChecks.lean:46:0: 'KhanSL2.Review.mainStatementV1_iff_surjective' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [9925/9952] Replayed IntegrationAudit
+info: IntegrationAudit.lean:1201:0: KhanSL2.phi_injective : Function.Injective ⇑KhanSL2.phi
+info: IntegrationAudit.lean:1202:0: KhanSL2.mainStatement_iff_surjective : KhanSL2.MainStatement ↔ Function.Surjective ⇑KhanSL2.phi
+info: IntegrationAudit.lean:1204:0: KhanSL2.Current.dictionary : (p B : ℕ) →
+  (S : ℤ) → ↥(KhanSL2.cohomologyPiece (KhanSL2.Current.kDegree p B S)) ≃ₗ[ℂ] Module.Dual ℂ (KhanSL2.Current.K p B S)
+info: IntegrationAudit.lean:1207:0: KhanSL2.Current.psiK_surjective : ∀ (p B : ℕ) (S : ℤ), Function.Surjective ⇑(KhanSL2.Current.psiK p B S)
+info: IntegrationAudit.lean:1209:0: KhanSL2.BGG.relative_bgg_resolution : Nonempty KhanSL2.BGG.RelativeBGGResolution
+info: IntegrationAudit.lean:1212:0: PASS: 20653 safe declarations in the combined M2 + BGG bridge + depth + coefficient-linear + conditional project; no sorryAx or additional axioms.
+info: IntegrationAudit.lean:1213:0: 'KhanSL2.Current.milestoneM2' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: IntegrationAudit.lean:1214:0: 'KhanSL2.BGG.relative_bgg_resolution' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: IntegrationAudit.lean:1215:0: 'KhanSL2.Review.mainStatement_iff_v1' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: IntegrationAudit.lean:1217:0: 'KhanSL2.Current.milestoneBGGBridge' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: IntegrationAudit.lean:1218:0: 'KhanSL2.Modules.psiB' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: IntegrationAudit.lean:1219:0: 'KhanSL2.Modules.kTotalEquivBGG' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: IntegrationAudit.lean:1221:0: 'KhanSL2.Depth.milestoneDepth' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: IntegrationAudit.lean:1222:0: 'KhanSL2.Modules.sourceDualEquiv' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: IntegrationAudit.lean:1223:0: 'KhanSL2.Modules.psiBLinear_surjective' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: IntegrationAudit.lean:1225:0: KhanSL2.Conditional.mainStatement_of_inputs : KhanSL2.Conditional.RemainingInputs → KhanSL2.MainStatement
+info: IntegrationAudit.lean:1226:0: 'KhanSL2.Conditional.mainStatement_of_inputs' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: IntegrationAudit.lean:1228:0: KhanSL2.BGGBridge.bggTerm_eq_bot_of_lt : ∀ (B p : ℕ), B < p → ∀ (S : ℤ), KhanSL2.BGGBridge.bggTerm p B S = ⊥
+info: IntegrationAudit.lean:1230:0: KhanSL2.Conditional.BGGComplex.term_subsingleton_of_lt : ∀ (B p : ℕ),
+  B < p → Subsingleton (KhanSL2.Conditional.BGGComplex.Term B p)
+info: IntegrationAudit.lean:1232:0: KhanSL2.Conditional.psi_above_injective : ∀ (B p : ℕ), B < p → Function.Injective ⇑(KhanSL2.Conditional.psi B p)
+info: IntegrationAudit.lean:1234:0: 'KhanSL2.BGGBridge.bggTerm_eq_bot_of_lt' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: IntegrationAudit.lean:1235:0: 'KhanSL2.Conditional.psi_above_injective' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: IntegrationAudit.lean:1238:0: KhanSL2.Conditional.BGGComplex.coefficientAction : (B p : ℕ) →
+  KhanSL2.Conditional.CoefficientRing B →ₐ[ℂ] Module.End ℂ (KhanSL2.Conditional.BGGComplex.Term B p)
+info: IntegrationAudit.lean:1241:0: KhanSL2.Conditional.BGGComplex.differential_smul : ∀ (B p : ℕ) (a : KhanSL2.Conditional.CoefficientRing B)
+  (x : KhanSL2.Conditional.BGGComplex.Term B (p + 1)),
+  (KhanSL2.Conditional.BGGComplex.differential B p) (a • x) = a • (KhanSL2.Conditional.BGGComplex.differential B p) x
+info: IntegrationAudit.lean:1245:0: KhanSL2.Conditional.canonicalComparison_smul : ∀ (B p : ℕ) (a : KhanSL2.Conditional.CoefficientRing B)
+  (x : KhanSL2.Conditional.BGGHomology B p),
+  (KhanSL2.Conditional.canonicalComparison B p) (a • x) = a • (KhanSL2.Conditional.canonicalComparison B p) x
+info: IntegrationAudit.lean:1249:0: KhanSL2.Conditional.bggHomologyEquiv : (B p : ℕ) →
+  KhanSL2.Conditional.BGGHomology B p ≃ₗ[KhanSL2.Conditional.CoefficientRing B] KhanSL2.Conditional.K B p
+info: IntegrationAudit.lean:1257:0: 'KhanSL2.Conditional.BGGComplex.differential_smul' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: IntegrationAudit.lean:1258:0: 'KhanSL2.Conditional.canonicalComparison_smul' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: IntegrationAudit.lean:1259:0: 'KhanSL2.Conditional.bggHomologyEquiv' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: IntegrationAudit.lean:1264:0: KhanSL2.PolynomialBGG.bggTerm_finite : ∀ (B p : ℕ),
+  Module.Finite (KhanSL2.Conditional.CoefficientRing B) (KhanSL2.Conditional.BGGComplex.Term B p)
+info: IntegrationAudit.lean:1267:0: KhanSL2.PolynomialBGG.bggTerm_projective : ∀ (B p : ℕ),
+  Module.Projective (KhanSL2.Conditional.CoefficientRing B) (KhanSL2.Conditional.BGGComplex.Term B p)
+info: IntegrationAudit.lean:1270:0: KhanSL2.Conditional.mainStatement_of_collisionSupport : KhanSL2.Conditional.CollisionSupportStep → KhanSL2.MainStatement
+info: IntegrationAudit.lean:1272:0: 'KhanSL2.PolynomialBGG.rootPolynomial_free' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: IntegrationAudit.lean:1273:0: 'KhanSL2.PolynomialBGG.bggTerm_finite' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: IntegrationAudit.lean:1274:0: 'KhanSL2.PolynomialBGG.bggTerm_projective' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: IntegrationAudit.lean:1275:0: 'KhanSL2.Conditional.mainStatement_of_collisionSupport' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: IntegrationAudit.lean:1278:0: KhanSL2.Conditional.topTermEquiv : (B : ℕ) →
+  KhanSL2.Conditional.BGGComplex.Term B B ≃ₗ[KhanSL2.Conditional.CoefficientRing B]
+    KhanSL2.Conditional.CoefficientRing B
+info: IntegrationAudit.lean:1281:0: KhanSL2.Conditional.psi_top_injective : ∀ (B : ℕ), Function.Injective ⇑(KhanSL2.Conditional.psi B B)
+info: IntegrationAudit.lean:1283:0: 'KhanSL2.Conditional.topTermEquiv' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: IntegrationAudit.lean:1284:0: 'KhanSL2.Conditional.BGGComplex.topGenerator_surjective' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: IntegrationAudit.lean:1285:0: 'KhanSL2.Conditional.psi_top_injective' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: IntegrationAudit.lean:1288:0: KhanSL2.lowDegreeStep : KhanSL2.Conditional.LowDegreeStep
+info: IntegrationAudit.lean:1291:0: 'KhanSL2.lowDegreeStep' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: IntegrationAudit.lean:1294:0: KhanSL2.PolynomialBGG.rootPolynomial_free : ∀ (n : ℕ),
+  Module.Free (KhanSL2.Depth.RB n) (KhanSL2.PolynomialBGG.RootPolynomial n)
+info: IntegrationAudit.lean:1296:0: KhanSL2.Conditional.bgg_top_differential_zero : ∀ (B : ℕ), 0 < B → KhanSL2.Conditional.bggDifferential B (B - 1) = 0
+info: IntegrationAudit.lean:1298:0: KhanSL2.Conditional.psi_injective_of_collisionSupport : KhanSL2.Conditional.CollisionSupportStep →
+  ∀ (B p : ℕ), Function.Injective ⇑(KhanSL2.Conditional.psi B p)
+info: IntegrationAudit.lean:1301:0: KhanSL2.Conditional.psiB_bijective_of_collisionSupport : KhanSL2.Conditional.CollisionSupportStep →
+  ∀ (B p : ℕ), Function.Bijective ⇑(KhanSL2.Modules.psiB B p)
+info: IntegrationAudit.lean:1306:0: KhanSL2.Macdonald.milestoneGenerators :
+  (∀ (w s k : ℕ), FiniteDimensional ℂ ↥(KhanSL2.Macdonald.piece w s k)) ∧
+    (∀ (w s : ℕ), FiniteDimensional ℂ ↥(KhanSL2.Macdonald.weightDegreePiece w s)) ∧
+      (∀ (w s k : ℕ), w < k → KhanSL2.Macdonald.piece w s k = ⊥) ∧
+        (∀ (n : ℕ), KhanSL2.Macdonald.S n ∈ KhanSL2.Macdonald.piece n 2 0) ∧
+          (∀ (n : ℕ), KhanSL2.Macdonald.E n ∈ KhanSL2.Macdonald.piece n 1 1) ∧
+            (∀ (m : ℕ) (u v : KhanSL2.Macdonald.W),
+                (KhanSL2.Macdonald.coefficientShift m) (u * v) =
+                  (KhanSL2.Macdonald.coefficientShift m) u * v + u * (KhanSL2.Macdonald.coefficientShift m) v) ∧
+              (∀ (m n : ℕ),
+                  (KhanSL2.Macdonald.coefficientShift m) (KhanSL2.Macdonald.S n) =
+                    if m ≤ n then 2 • KhanSL2.Macdonald.S (n - m) else 0) ∧
+                (∀ (m n : ℕ),
+                    (KhanSL2.Macdonald.coefficientShift m) (KhanSL2.Macdonald.E n) = KhanSL2.Macdonald.E (n - m)) ∧
+                  KhanSL2.Macdonald.E 0 = 0
+info: IntegrationAudit.lean:1307:0: 'KhanSL2.Macdonald.milestoneGenerators' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: IntegrationAudit.lean:1310:0: KhanSL2.Collision.mainStatement_of_kFactor : (∀ (B : ℕ), KhanSL2.Collision.KFactor B) → KhanSL2.MainStatement
+info: IntegrationAudit.lean:1312:0: KhanSL2.StrongMacdonald.harm_free :
+  (∀ (y : KhanSL2.StrongMacdonald.W), KhanSL2.StrongMacdonald.Gmap y ∈ KhanSL2.StrongMacdonald.harm) ∧
+    (∀ f ∈ KhanSL2.StrongMacdonald.harm,
+        ∃ y, KhanSL2.StrongMacdonald.projFull y = y ∧ KhanSL2.StrongMacdonald.Gmap y = f) ∧
+      ∀ (y : KhanSL2.StrongMacdonald.W),
+        KhanSL2.StrongMacdonald.projFull y = y → KhanSL2.StrongMacdonald.Gmap y = 0 → y = 0
+info: IntegrationAudit.lean:1313:0: KhanSL2.StrongMacdonald.harmEquivCohom (w s : ℕ) :
+  ↥(KhanSL2.StrongMacdonald.harm ⊓ KhanSL2.StrongMacdonald.piece w s) ≃ₗ[ℂ] KhanSL2.StrongMacdonald.cohom w s
+info: IntegrationAudit.lean:1314:0: 'KhanSL2.Collision.mainStatement_of_kFactor' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: IntegrationAudit.lean:1315:0: 'KhanSL2.StrongMacdonald.harm_free' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: IntegrationAudit.lean:1316:0: 'KhanSL2.StrongMacdonald.harmEquivCohom' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [9932/9952] Replayed MacdonaldAudit
+info: MacdonaldAudit.lean:112:0: sigma_mem_piece : ∀ (a : Fin 3) (n : ℕ), sigma a n ∈ piece n 1 0
+info: MacdonaldAudit.lean:113:0: psi_mem_piece : ∀ (a : Fin 3) (i : ℕ), psi a i ∈ piece (i + 1) 0 1
+info: MacdonaldAudit.lean:118:0: S_mem_piece : ∀ (n : ℕ), S n ∈ piece n 2 0
+info: MacdonaldAudit.lean:119:0: E_mem_piece : ∀ (n : ℕ), E n ∈ piece n 1 1
+info: MacdonaldAudit.lean:122:0: coefficientShift : ℕ → Module.End ℂ W
+info: MacdonaldAudit.lean:123:0: coefficientShift_mul : ∀ (m : ℕ) (u v : W),
+  (coefficientShift m) (u * v) = (coefficientShift m) u * v + u * (coefficientShift m) v
+info: MacdonaldAudit.lean:125:0: coefficientShift_S : ∀ (m n : ℕ), (coefficientShift m) (S n) = if m ≤ n then 2 • S (n - m) else 0
+info: MacdonaldAudit.lean:127:0: coefficientShift_E : ∀ (m n : ℕ), (coefficientShift m) (E n) = E (n - m)
+info: MacdonaldAudit.lean:137:0: KhanSL2.Macdonald.milestoneGenerators :
+  (∀ (w s k : ℕ), FiniteDimensional ℂ ↥(piece w s k)) ∧
+    (∀ (w s : ℕ), FiniteDimensional ℂ ↥(weightDegreePiece w s)) ∧
+      (∀ (w s k : ℕ), w < k → piece w s k = ⊥) ∧
+        (∀ (n : ℕ), S n ∈ piece n 2 0) ∧
+          (∀ (n : ℕ), E n ∈ piece n 1 1) ∧
+            (∀ (m : ℕ) (u v : W),
+                (coefficientShift m) (u * v) = (coefficientShift m) u * v + u * (coefficientShift m) v) ∧
+              (∀ (m n : ℕ), (coefficientShift m) (S n) = if m ≤ n then 2 • S (n - m) else 0) ∧
+                (∀ (m n : ℕ), (coefficientShift m) (E n) = E (n - m)) ∧ E 0 = 0
+info: MacdonaldAudit.lean:138:0: PASS: 895 safe declarations in the Macdonald milestone's project closure; no sorryAx or additional axioms.
+info: MacdonaldAudit.lean:138:0: The proved milestone concerns the concrete mixed algebra and generators; no CE cohomology theorem is asserted.
+info: MacdonaldAudit.lean:139:0: 'KhanSL2.Macdonald.milestoneGenerators' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MacdonaldAudit.lean:140:0: 'KhanSL2.Macdonald.coefficientShift_S' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MacdonaldAudit.lean:141:0: 'KhanSL2.Macdonald.coefficientShift_E' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [9936/9952] Replayed StrongMacdonaldAudit
+info: StrongMacdonaldAudit.lean:109:0: PASS: 1839 safe declarations; no sorryAx or additional axioms.
+info: StrongMacdonaldAudit.lean:113:0: lap_eq_box_D_K : lap = boxOp + DOp + KOp
+info: StrongMacdonaldAudit.lean:114:0: dbar_mul_dbar : dbar * dbar = 0
+info: StrongMacdonaldAudit.lean:115:0: @mem_harm_iff : ∀ {x : W},
+  x ∈ harm ↔ x ∈ inv ∧ (∀ (i : ℕ) (a : Fin 3), (X i a) x = 0) ∧ ∀ (i : ℕ) (a : Fin 3), (dUd i a) x = 0
+info: StrongMacdonaldAudit.lean:116:0: harmEquivCohom : (w s : ℕ) → ↥(harm ⊓ piece w s) ≃ₗ[ℂ] cohom w s
+info: StrongMacdonaldAudit.lean:117:0: @eq_zero_of_slicePt : ∀ {x : W},
+  (∀ (c : Fin 3), (Y c) x = 0) →
+    (∀ (i : ℕ) (a : Fin 3), (X i a) x = 0) →
+      (∀ (A : ℂ) (B : PowerSeries ℂ), A ≠ 0 → (evalAt (slicePt A B)) x = 0) → x = 0
+info: StrongMacdonaldAudit.lean:118:0: harm_free : (∀ (y : W), Gmap y ∈ harm) ∧
+  (∀ f ∈ harm, ∃ y, projFull y = y ∧ Gmap y = f) ∧ ∀ (y : W), projFull y = y → Gmap y = 0 → y = 0
+info: StrongMacdonaldAudit.lean:119:0: 'KhanSL2.StrongMacdonald.harm_free' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: StrongMacdonaldAudit.lean:120:0: 'KhanSL2.StrongMacdonald.harmEquivCohom' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [9940/9952] Replayed CollisionAudit
+info: CollisionAudit.lean:1100:0: PASS: 458 safe declarations; no sorryAx or additional axioms.
+info: CollisionAudit.lean:1104:0: def KhanSL2.Collision.KFactor : ℕ → Prop :=
+fun B =>
+  ∀ (B₁ B₂ : ℕ),
+    0 < B₁ →
+      0 < B₂ →
+        B₁ + B₂ = B →
+          ∀ (A : Type) [inst : CommRing A] [inst_1 : Algebra (KhanSL2.Depth.RB B) A]
+            [Algebra.Etale (KhanSL2.Depth.RB B) A] (c : ChartData B B₁ B₂ A) (p : ℕ),
+            Nonempty
+              (TensorProduct (KhanSL2.Depth.RB B) A (KhanSL2.Conditional.K B p) ≃ₗ[A]
+                FactorSide c (KhanSL2.Conditional.K B₁) (KhanSL2.Conditional.K B₂) p)
+info: CollisionAudit.lean:1105:0: jFactor : ∀ (B : ℕ), JFactor B
+info: CollisionAudit.lean:1106:0: collisionSupportStep_of_kFactor : (∀ (B : ℕ), KFactor B) → KhanSL2.Conditional.CollisionSupportStep
+info: CollisionAudit.lean:1107:0: 'KhanSL2.Collision.jFactor' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: CollisionAudit.lean:1108:0: 'KhanSL2.Collision.collisionSupportStep_of_kFactor' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: CollisionAudit.lean:1110:0: mainStatement_of_kFactor : (∀ (B : ℕ), KFactor B) → KhanSL2.MainStatement
+info: CollisionAudit.lean:1111:0: 'KhanSL2.Collision.mainStatement_of_kFactor' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [9944/9952] Replayed MainProofAudit
+info: MainProofAudit.lean:1158:0: KhanSL2.Collision.kFactor : ∀ (B : ℕ), KhanSL2.Collision.KFactor B
+info: MainProofAudit.lean:1159:0: KhanSL2.mainStatement : KhanSL2.MainStatement
+info: MainProofAudit.lean:1160:0: theorem KhanSL2.mainStatement : KhanSL2.MainStatement :=
+KhanSL2.Collision.mainStatement_of_kFactor KhanSL2.Collision.kFactor
+info: MainProofAudit.lean:1161:0: 'KhanSL2.Collision.kFactor' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MainProofAudit.lean:1162:0: 'KhanSL2.mainStatement' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MainProofAudit.lean:1163:0: PASS: 20655 safe declarations; complete private-proof closure; no sorryAx or additional axioms.
+ℹ [9950/9952] Replayed FinalAudit
+info: FinalAudit.lean:11:0: KhanSL2.mainStatement : KhanSL2.MainStatement
+info: FinalAudit.lean:12:0: KhanSL2.mainStatement_explicit : KhanSL2.IsGradedDifferentialPVAIsomorphism KhanSL2.sourceData KhanSL2.Source.bracket
+  KhanSL2.targetData KhanSL2.targetBracket KhanSL2.phi
+info: FinalAudit.lean:16:0: KhanSL2.phi_bijective : Function.Bijective ⇑KhanSL2.phi
+info: FinalAudit.lean:17:0: 'KhanSL2.mainStatement_explicit' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FinalAudit.lean:20:0: PASS: vfinal explicit theorem and original statement; only standard foundational axioms.
+Build completed successfully (9952 jobs).
+KhanSL2.mainStatement : KhanSL2.MainStatement
+KhanSL2.mainStatement_explicit : KhanSL2.IsGradedDifferentialPVAIsomorphism KhanSL2.sourceData KhanSL2.Source.bracket
+  KhanSL2.targetData KhanSL2.targetBracket KhanSL2.phi
+KhanSL2.phi_bijective : Function.Bijective ⇑KhanSL2.phi
+'KhanSL2.mainStatement_explicit' depends on axioms: [propext, Classical.choice, Quot.sound]
+PASS: vfinal explicit theorem and original statement; only standard foundational axioms.
+PASS: original Lean sources preserved, allowing only documented comment corrections; frozen specification matches.
+Final source verification completed: 2026-10-27T13:46:20.3346214Z

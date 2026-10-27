@@ -1,0 +1,13 @@
+{
+  "challenge_module": "FrozenSpecification",
+  "solution_module": "MainProofAudit",
+  "theorem_names": [
+    "KhanSL2.mainStatement"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ]
+}
