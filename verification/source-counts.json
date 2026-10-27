@@ -1,0 +1,10 @@
+{
+  "release": "vfinal",
+  "lean_files": 1048,
+  "lean_lines": 121031,
+  "original_lean_files_byte_identical": 1043,
+  "original_files_with_comment_only_edits": 3,
+  "new_lean_files": 2,
+  "external_library_sources_counted": false,
+  "nested_frozen_archive_counted": false
+}

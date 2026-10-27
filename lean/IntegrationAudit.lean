@@ -1,0 +1,1316 @@
+module
+
+import all KhanSL2.Basic
+import all KhanSL2.Source
+import all KhanSL2.PVA
+import all KhanSL2.SourceUniversal
+import all KhanSL2.SourceSupercomm
+import all KhanSL2.SourceParity
+import all KhanSL2.SourceData
+import all KhanSL2.LambdaPolynomialLemmas
+import all KhanSL2.SourceJetActions
+import all KhanSL2.SourceGeneratorChecks
+import all KhanSL2.SourceHamiltonian
+import all KhanSL2.LambdaPolynomialSkew
+import all KhanSL2.SourceBracketOperators
+import all KhanSL2.SourceBracketOperatorCalculus
+import all KhanSL2.SourceParityProjections
+import all KhanSL2.SourceBracket
+import all KhanSL2.SourceGrading
+import all KhanSL2.SourceHamiltonianDegree
+import all KhanSL2.SourceHamiltonianLeibniz
+import all KhanSL2.SourceAlgebra
+import all KhanSL2.SourceSupercommUngraded
+import all KhanSL2.SourceBracketOperatorParity
+import all KhanSL2.SourceBracketLeibniz
+import all KhanSL2.SourceHamiltonianExt
+import all KhanSL2.SourceBracketQuotient
+import all KhanSL2.SourceBracketParity
+import all KhanSL2.SourceBracketSkew
+import all KhanSL2.SourcePolynomialDegree
+import all KhanSL2.SourceGeneration
+import all KhanSL2.SourceBracketDegree
+import all KhanSL2.SourceJacobiExtension
+import all KhanSL2.SourceBracketGeneratorJacobi
+import all KhanSL2.JacobiTranslation
+import all KhanSL2.SourceJacobiThird
+import all KhanSL2.JacobiPermutation
+import all KhanSL2.JacobiLastPermutation
+import all KhanSL2.SourceBracketJacobi
+import all KhanSL2.SourcePVA
+import all KhanSL2.PVAMap
+import all KhanSL2.SourceMapBracket
+import all KhanSL2.CE
+import all KhanSL2.Cocycles
+import all KhanSL2.CEDerivationBasics
+import all KhanSL2.BasisGrading
+import all KhanSL2.CochainGrading
+import all KhanSL2.CEDegrees
+import all KhanSL2.ExteriorAlgebra
+import all KhanSL2.ExteriorSigns
+import all KhanSL2.ExteriorParity
+import all KhanSL2.ExteriorRing
+import all KhanSL2.CEExterior
+import all KhanSL2.ExteriorSupercomm
+import all KhanSL2.CochainSupercomm
+import all KhanSL2.ExteriorContraction
+import all KhanSL2.ExteriorDerivation
+import all KhanSL2.CELeibniz
+import all KhanSL2.CEConvolutionArithmetic
+import all KhanSL2.CETranslationGenerator
+import all KhanSL2.CESeries
+import all KhanSL2.CESquareZero
+import all KhanSL2.CEInvariantBasics
+import all KhanSL2.CEEquivariance
+import all KhanSL2.CETranslation
+import all KhanSL2.Data
+import all KhanSL2.CEComplex
+import all KhanSL2.BCModeKernel
+import all KhanSL2.BCFullCE
+import all KhanSL2.BCFullKernel
+import all KhanSL2.BCFullBracketDefinition
+import all KhanSL2.BCSkewCalculus
+import all KhanSL2.BCFullBracketSkew
+import all KhanSL2.BCFullGrading
+import all KhanSL2.BCFullAlgebra
+import all KhanSL2.BCFullBracketDegree
+import all KhanSL2.BCFullBracketLaws
+import all KhanSL2.BCFullGeneration
+import all KhanSL2.BCFullBracketSesqui
+import all KhanSL2.BCFullJacobi
+import all KhanSL2.BCFullPVA
+import all KhanSL2.ExteriorReindex
+import all KhanSL2.BCFullEmbedding
+import all KhanSL2.BCFullDifferential
+import all KhanSL2.BCFullTranslation
+import all KhanSL2.BCHamiltonianCalculus
+import all KhanSL2.BCFullHamiltonian
+import all KhanSL2.BCFullHamiltonianB0
+import all KhanSL2.BCFullHamiltonianIdentity
+import all KhanSL2.BCBracketDefinition
+import all KhanSL2.BCFullBracketEmbedding
+import all KhanSL2.BCBracketSkew
+import all KhanSL2.BCBracketDegree
+import all KhanSL2.BCBracketLaws
+import all KhanSL2.CochainGeneration
+import all KhanSL2.BCBracketSesqui
+import all KhanSL2.CochainJacobi
+import all KhanSL2.CochainAlgebra
+import all KhanSL2.BCPVA
+import all KhanSL2.CochainBracketDerivation
+import all KhanSL2.BCColor
+import all KhanSL2.PVATransport
+import all KhanSL2.PVASubquotient
+import all KhanSL2.GradingDecomposition
+import all KhanSL2.CohomologyGrading
+import all KhanSL2.CohomologyDescent
+import all KhanSL2.RelativeHamiltonian
+import all KhanSL2.TargetPVA
+import all KhanSL2.CanonicalTarget
+import all KhanSL2.CanonicalPrimitives
+import all KhanSL2.CanonicalInvariants
+import all KhanSL2.CanonicalRelations
+import all KhanSL2.CanonicalMixed
+import all KhanSL2.CanonicalBoundaryDescent
+import all KhanSL2.CanonicalBracket
+import all KhanSL2.CanonicalVanish
+import all KhanSL2.CanonicalMap
+import all KhanSL2.PVAIsomorphism
+import all KhanSL2.CurrentAlgebra
+import all KhanSL2.ColorBasis
+import all KhanSL2.MainStatement
+import all KhanSL2.Injectivity.ExteriorSubstitution
+import all KhanSL2.Injectivity.CartanRestriction
+import all KhanSL2.Injectivity.FinitePairing
+import all KhanSL2.Injectivity.CartanContraction
+import all KhanSL2.Injectivity.RootCurrent
+import all KhanSL2.Injectivity.CurrentAdjoint
+import all KhanSL2.Injectivity.ChainPairing
+import all KhanSL2.Injectivity.CartanFunctional
+import all KhanSL2.Injectivity.ClosedCurrentFamilies
+import all KhanSL2.Injectivity.OrderedProducts
+import all KhanSL2.Injectivity.NewtonCycles
+import all KhanSL2.Injectivity.NewtonPolynomials
+import all KhanSL2.Injectivity.RootCycles
+import all KhanSL2.Injectivity.RootPolynomialEncoding
+import all KhanSL2.Injectivity.FiniteSupport
+import all KhanSL2.Injectivity.CartanSupport
+import all KhanSL2.Injectivity.RootEncodingSupport
+import all KhanSL2.Injectivity.RootClosedFamilies
+import all KhanSL2.Injectivity.ExteriorWords
+import all KhanSL2.Injectivity.ExteriorPolynomialEvaluation
+import all KhanSL2.Injectivity.CartanPolynomialEvaluation
+import all KhanSL2.Injectivity.CartanBlockDeterminant
+import all KhanSL2.Injectivity.RootAlternation
+import all KhanSL2.Injectivity.CartanTensor
+import all KhanSL2.Injectivity.RootCyclePairing
+import all KhanSL2.Injectivity.CartanTensorEvaluation
+import all KhanSL2.Injectivity.DiagonalDivisibility
+import all KhanSL2.Injectivity.DiagonalFactors
+import all KhanSL2.Injectivity.VandermondeFactors
+import all KhanSL2.Injectivity.VandermondeAppend
+import all KhanSL2.Injectivity.BlockSymmetry
+import all TauCeti.RingTheory.MvPolynomial.Symmetric.Homogeneous
+import all TauCeti.Algebra.MvPolynomial.Monomial
+import all TauCeti.Combinatorics.Young.Diagram
+import all TauCeti.Combinatorics.Enumerative.Partition.Dominance
+import all TauCeti.Combinatorics.Enumerative.Partition.Basic
+import all TauCeti.Combinatorics.Young.Partitions
+import all TauCeti.Combinatorics.Enumerative.Partition.Conjugate
+import all TauCeti.Combinatorics.Young.SemistandardTableau
+import all TauCeti.Combinatorics.Young.Kostka
+import all TauCeti.Combinatorics.Young.BenderKnuth
+import all TauCeti.RingTheory.MvPolynomial.Symmetric.Schur.Basic
+import all TauCeti.RingTheory.MvPolynomial.Symmetric.Schur.Symmetric
+import all TauCeti.RingTheory.MvPolynomial.Symmetric.Schur.Monomial
+import all TauCeti.RingTheory.MvPolynomial.Symmetric.Schur.Basis
+import all TauCeti.Combinatorics.Young.OfRowLens
+import all TauCeti.Data.Fin.StrictAnti
+import all TauCeti.Combinatorics.Young.BetaNumbers
+import all TauCeti.LinearAlgebra.BilinearForm.Basic
+import all TauCeti.LinearAlgebra.Multilinear.Span
+import all TauCeti.LinearAlgebra.BilinearForm.Multilinear
+import all TauCeti.LinearAlgebra.Determinant.Basic
+import all TauCeti.Data.Sym.Basic
+import all TauCeti.RingTheory.MvPolynomial.Homogeneous
+import all TauCeti.RingTheory.MvPolynomial.Symmetric.Complete.Basic
+import all TauCeti.RingTheory.MvPolynomial.Symmetric.Alternant
+import all TauCeti.Combinatorics.Young.Interlacing
+import all TauCeti.RingTheory.MvPolynomial.Symmetric.Schur.Branching
+import all TauCeti.RingTheory.MvPolynomial.Symmetric.Schur.Bialternant
+import all KhanSL2.Injectivity.SchurAlternants
+import all KhanSL2.Injectivity.AlternantProductSpan
+import all KhanSL2.Injectivity.CyclePolynomialIdentities
+import all KhanSL2.Injectivity.CycleNormalization
+import all KhanSL2.Injectivity.SelectedCycles
+import all KhanSL2.Injectivity.SourceSectors
+import all KhanSL2.Injectivity.SourceWordPairing
+import all KhanSL2.Injectivity.CartanJets
+import all KhanSL2.Injectivity.ExteriorDeterminant
+import all KhanSL2.Injectivity.ExteriorSeries
+import all KhanSL2.Injectivity.AxisSeries
+import all KhanSL2.Injectivity.CartanSeriesSlots
+import all KhanSL2.Injectivity.CartanSeriesWord
+import all KhanSL2.Injectivity.TaylorPolynomial
+import all KhanSL2.Injectivity.TaylorCoefficients
+import all KhanSL2.Injectivity.TaylorChainComparison
+import all KhanSL2.Injectivity.DiagonalCoefficients
+import all KhanSL2.Injectivity.TaylorRelations
+import all KhanSL2.Injectivity.TaylorJetConvolution
+import all KhanSL2.Injectivity.TaylorHeadRelations
+import all KhanSL2.Injectivity.TaylorMixedRelations
+import all KhanSL2.Injectivity.TaylorOddRelations
+import all KhanSL2.Injectivity.MonomialSymmetry
+import all KhanSL2.Injectivity.TaylorSymmetry
+import all KhanSL2.Injectivity.TaylorVanishing
+import all KhanSL2.Injectivity.DiagonalCovariance
+import all KhanSL2.Injectivity.TaylorDiagonals
+import all KhanSL2.Injectivity.TaylorDiscriminant
+import all KhanSL2.Injectivity.SourcePolynomialSpan
+import all KhanSL2.Injectivity.TaylorLinear
+import all KhanSL2.Injectivity.TaylorRealization
+import all KhanSL2.Injectivity.TaylorSeparation
+import all KhanSL2.Injectivity.SectorLinearSeparation
+import all KhanSL2.Injectivity.GradedSeparation
+import all KhanSL2.Injectivity
+import all KhanSL2.InjectivityMainStatement
+import all TauCeti.Algebra.Homology.HomologicalComplex.Basic
+import all TauCeti.Algebra.Homology.Homotopy
+import all TauCeti.Algebra.Homology.Linear
+import all TauCeti.LinearAlgebra.CliffordAlgebra.Grading
+import all TauCeti.LinearAlgebra.CliffordAlgebra.Contraction
+import all TauCeti.LinearAlgebra.ExteriorPower.Basic
+import all TauCeti.LinearAlgebra.ExteriorAlgebra.Contraction
+import all TauCeti.RingTheory.KoszulComplex.Basic
+import all KhanSL2.Injectivity.RootKoszulCycles
+import all KhanSL2.Chains.Transpose
+import all KhanSL2.Chains.Coinvariant
+import all KhanSL2.Chains.Dictionary
+import all KhanSL2.Chains.Psi
+import all KhanSL2.Chains.CurrentModel
+import all KhanSL2.LieChains.DerivExt
+import all KhanSL2.LieChains.Basic
+import all KhanSL2.Chains.Comparison.Setup
+import all KhanSL2.Chains.Comparison.Transfer
+import all KhanSL2.Chains.Comparison.Generators
+import all KhanSL2.Chains.Comparison.Support
+import all KhanSL2.Chains.Comparison.Intertwine
+import all KhanSL2.Chains.Comparison.Boundary
+import all KhanSL2.Chains.Comparison.Bijective
+import all KhanSL2.Chains.RelativeHomology
+import all KhanSL2.LieChains.Grading
+import all KhanSL2.Chains.Grading
+import all KhanSL2.Chains.RelativeComplex
+import all KhanSL2.DictionaryStatement
+import all KhanSL2
+import all KhanSL2.BGG.Current
+import all KhanSL2.BGG.CurrentCoordinates
+import all KhanSL2.BGG.CurrentPositive
+import all KhanSL2.BGG.CurrentBasis
+import all KhanSL2.BGG.ExteriorModel
+import all KhanSL2.BGG.PositiveCE
+import all KhanSL2.BGG.PositiveBoundary
+import all TauCeti.Data.Finsupp.Order
+import all TauCeti.RingTheory.MvPolynomial.RestrictTotalDegree
+import all TauCeti.Algebra.Lie.UniversalEnveloping.PBW.PolynomialRep
+import all TauCeti.Algebra.Lie.UniversalEnveloping.Basic
+import all TauCeti.Algebra.WordFiltration.Basic
+import all TauCeti.Algebra.Lie.UniversalEnveloping.PBW.Basic
+import all TauCeti.Algebra.Lie.UniversalEnveloping.Functoriality
+import all TauCeti.Algebra.Lie.UniversalEnveloping.PBW.LeadingTerm
+import all TauCeti.Algebra.Lie.UniversalEnveloping.PBW.Evaluation
+import all TauCeti.Algebra.Lie.UniversalEnveloping.PBW.Ordered
+import all TauCeti.Algebra.Lie.UniversalEnveloping.PBW.Basis
+import all KhanSL2.BGG.FreeCEBasis
+import all KhanSL2.BGG.CurrentScaling
+import all KhanSL2.BGG.WordGrading
+import all KhanSL2.BGG.Augmentation
+import all KhanSL2.BGG.UEGeneration
+import all KhanSL2.BGG.EnvelopingGrading
+import all KhanSL2.BGG.Induced
+import all KhanSL2.BGG.FreeCE
+import all KhanSL2.BGG.PositiveBoundaryAdjoint
+import all KhanSL2.BGG.PositiveLaplacianBasics
+import all KhanSL2.BGG.ExteriorSecondOrder
+import all KhanSL2.BGG.ExteriorSecondOrderCalculus
+import all KhanSL2.BGG.PositiveLaplacianOrder
+import all KhanSL2.BGG.PositiveBoundaryProducts
+import all KhanSL2.BGG.PositiveLaplacianPairs
+import all KhanSL2.BGG.RootEnergy
+import all KhanSL2.BGG.RootExterior
+import all KhanSL2.BGG.RootExteriorCurrent
+import all KhanSL2.BGG.ExteriorAction
+import all KhanSL2.BGG.RootAction
+import all KhanSL2.BGG.RootExteriorPieces
+import all KhanSL2.BGG.RootActionEnergy
+import all KhanSL2.BGG.RootCartan
+import all KhanSL2.BGG.RootHighest
+import all KhanSL2.BGG.ColorRoot
+import all KhanSL2.BGG.ColorRootEquivariance
+import all KhanSL2.BGG.ExteriorEuler
+import all KhanSL2.BGG.ColorRootGrading
+import all KhanSL2.BGG.PositiveCEParity
+import all KhanSL2.BGG.PositiveEnergyCasimir
+import all KhanSL2.BGG.PositiveLaplacian
+import all TauCeti.Algebra.Lie.GeneralLinear.Basic
+import all TauCeti.LinearAlgebra.Dual.Lemmas
+import all TauCeti.Algebra.Lie.GeneralLinear.Finrank
+import all TauCeti.Algebra.Lie.Sl2.Basic
+import all TauCeti.Algebra.Lie.Sl2.WeightString
+import all TauCeti.Algebra.Lie.Subalgebra.Top
+import all TauCeti.Algebra.Lie.Sl2.Standard
+import all TauCeti.Algebra.Lie.Sl2.Classification
+import all TauCeti.Algebra.Lie.Basic
+import all TauCeti.Algebra.Lie.Submodule.Atom
+import all TauCeti.Algebra.Lie.Sl2.Casimir
+import all TauCeti.Algebra.Lie.Sl2.Generated
+import all TauCeti.Algebra.Lie.Submodule.Finrank
+import all TauCeti.Algebra.Lie.CompleteReducibility
+import all TauCeti.Algebra.Lie.Sl2.CompleteReducibility
+import all KhanSL2.BGG.RootCasimir
+import all KhanSL2.BGG.ColorCasimir
+import all KhanSL2.BGG.RootCasimirKernel
+import all KhanSL2.BGG.PositiveSpectralKernel
+import all KhanSL2.BGG.PositiveCEGrading
+import all KhanSL2.BGG.GradedKernel
+import all KhanSL2.BGG.PositiveHarmonics
+import all KhanSL2.BGG.CasimirSplitting
+import all KhanSL2.BGG.GradedSpectralSplitting
+import all KhanSL2.BGG.GreenOperator
+import all TauCeti.LinearAlgebra.Graded.LinearMap
+import all TauCeti.Algebra.Homology.Contraction.Linear
+import all KhanSL2.BGG.HodgeContraction
+import all KhanSL2.BGG.PositiveContraction
+import all KhanSL2.BGG.PositiveBoundaryEquivariance
+import all KhanSL2.BGG.PositiveContractionGrading
+import all KhanSL2.BGG.PositiveEnergyScale
+import all KhanSL2.BGG.FreeCEEnergy
+import all KhanSL2.BGG.PositiveHarmonicPieces
+import all KhanSL2.BGG.PositiveHarmonicDecomposition
+import all TauCeti.Algebra.Lie.DirectSum
+import all TauCeti.Order.SupIndep
+import all TauCeti.LinearAlgebra.Projection
+import all TauCeti.Algebra.Lie.Submodule.DirectSum
+import all KhanSL2.BGG.EquivariantHarmonicDecomposition
+import all KhanSL2.BGG.ContractionBaseChange
+import all KhanSL2.BGG.PositiveTransferBase
+import all TauCeti.LinearAlgebra.End.LocallyNilpotent
+import all KhanSL2.BGG.FiltrationNilpotence
+import all TauCeti.Algebra.Ring.Units
+import all TauCeti.Algebra.Homology.Contraction.Perturbation
+import all KhanSL2.BGG.PositiveTransferFiltration
+import all KhanSL2.BGG.FreeCEAugmentation
+import all KhanSL2.BGG.PolynomialKoszul
+import all KhanSL2.BGG.FreeCEOperators
+import all KhanSL2.BGG.FreeCEFiniteSquare
+import all KhanSL2.BGG.FreeCESupport
+import all KhanSL2.BGG.FreeCESquareZero
+import all KhanSL2.BGG.PositiveTransfer
+import all KhanSL2.BGG.PerturbationEquivariance
+import all KhanSL2.BGG.PositiveTransferEnergy
+import all KhanSL2.BGG.Vacuum
+import all KhanSL2.BGG.FirstMaps
+import all KhanSL2.BGG.CurrentUEGrading
+import all TauCeti.Data.Multiset.Sort
+import all TauCeti.Algebra.Lie.UniversalEnveloping.PBW.Decomposition
+import all KhanSL2.BGG.CurrentPBW
+import all KhanSL2.BGG.InducedScalarLift
+import all KhanSL2.BGG.InducedFactorization
+import all KhanSL2.BGG.RelativeProjectivity
+import all KhanSL2.BGG.Terms
+import all KhanSL2.BGG.InducedBaseMap
+import all KhanSL2.BGG.TermGrading
+import all TauCeti.Algebra.Lie.UniversalEnveloping.Module
+import all KhanSL2.BGG.TermPBW
+import all TauCeti.Algebra.Lie.Derivation.Basic
+import all TauCeti.Algebra.Lie.Derivation.Ideal
+import all TauCeti.Algebra.Lie.UniversalEnveloping.Derivation.Basic
+import all KhanSL2.BGG.TermPBWAction
+import all KhanSL2.BGG.TermPBWGrading
+import all KhanSL2.BGG.TermPBWFree
+import all KhanSL2.BGG.HarmonicTensorTerms
+import all KhanSL2.BGG.HarmonicEnergy
+import all KhanSL2.BGG.FreeCEEnergyAugmentation
+import all KhanSL2.BGG.FreeCEPBW
+import all KhanSL2.BGG.PolynomialKoszulFinite
+import all KhanSL2.BGG.PolynomialKoszulHomotopy
+import all KhanSL2.BGG.FreeCEPBWAugmentation
+import all KhanSL2.BGG.PolynomialKoszulGrading
+import all KhanSL2.BGG.FreeCEDegree
+import all KhanSL2.BGG.PolynomialKoszulTensor
+import all KhanSL2.BGG.PolynomialKoszulFiltration
+import all KhanSL2.BGG.FreeCELowering
+import all KhanSL2.BGG.FreeCEAugmentationModule
+import all KhanSL2.BGG.FilteredCorrection
+import all KhanSL2.BGG.FreeCEExactness
+import all KhanSL2.BGG.ContractionGradedExactness
+import all KhanSL2.BGG.HarmonicResolution
+import all KhanSL2.BGG.PositiveTransferDegreeBase
+import all KhanSL2.BGG.PositiveTransferDegree
+import all KhanSL2.BGG.FreeCEActualDegree
+import all KhanSL2.BGG.HarmonicResolutionDegree
+import all KhanSL2.BGG.TermPBWMorphism
+import all KhanSL2.BGG.TermResolution
+import all KhanSL2.BGG.FreeCEEquivarianceAction
+import all KhanSL2.BGG.HarmonicTensorEquivariance
+import all KhanSL2.BGG.FreeCEEquivarianceContraction
+import all KhanSL2.BGG.FreeCEEquivariance
+import all KhanSL2.BGG.PositiveTransferEquivariance
+import all KhanSL2.BGG.TermResolutionEquivariance
+import all KhanSL2.BGG.TermResolutionEnergy
+import all KhanSL2.BGG.FreeCEAugmentationEquivariance
+import all KhanSL2.BGG.TermResolutionAugmentation
+import all KhanSL2.BGG.PositiveUEFiniteEnergy
+import all KhanSL2.BGG.TermFiniteEnergy
+import all KhanSL2.BGG.TermResolutionGradedExactness
+import all KhanSL2.BGG.RelativeCochainsBasic
+import all KhanSL2.BGG.RelativeCoefficientAction
+import all KhanSL2.BGG.TermEnergyLie
+import all KhanSL2.BGG.FiniteSl2Splitting
+import all KhanSL2.BGG.TermRelativeAdmissibility
+import all KhanSL2.BGG.RelativeBGG
+import all KhanSL2.BGG.RelativeCochains
+import all KhanSL2.BGG.RelativeCochainsTransfer
+import all KhanSL2.BGG.RelativeCochainsDegree
+import all TauCeti.Algebra.Module.Submodule.Ker
+import all TauCeti.LinearAlgebra.Quotient.Prod
+import all TauCeti.Algebra.Homology.SquareZero
+import all KhanSL2.BGG.ContractionHomology
+import all KhanSL2.BGG.ContractionDegreeHomology
+import all KhanSL2.BGG.RelativeCochainsCohomology
+import all TauCeti.Algebra.Lie.Weights.Central
+import all TauCeti.Algebra.Lie.Schur
+import all TauCeti.Algebra.Lie.Dual
+import all KhanSL2.BGG.CoefficientDual
+import all KhanSL2.BGG.CoefficientTensorInvariants
+import all KhanSL2.BGG.RelativeCochainsCoefficients
+import all KhanSL2.BGG.RelativeCochainsInduced
+import all KhanSL2.BGG.RelativeCochainsTensor
+import all KhanSL2.BGG.RelativeCochainsTermComplex
+import all KhanSL2.BGG.RelativeCochainsTensorComplex
+import all BGG
+import all KhanSL2.BGGBridge.BaseChange
+import all KhanSL2.BGGBridge.Coefficients
+import all KhanSL2.BGGBridge.ContractionOps
+import all KhanSL2.BGGBridge.Transfer
+import all KhanSL2.BGGBridge.ExteriorIso
+import all KhanSL2.BGGBridge.BoundaryCompare
+import all KhanSL2.BGGBridge.ChainIso
+import all KhanSL2.BGGBridge.GradingOps
+import all KhanSL2.BGGBridge.Windows
+import all KhanSL2.BGGBridge.TrivialCoefficients
+import all KhanSL2.BGGBridgeStatement
+import all KhanSL2.BGGBridge.CoefficientWeights
+import all KhanSL2.BGGBridge.CoefficientProjection
+import all KhanSL2.BGGBridge.TensorCoinvariants
+import all KhanSL2.BGGBridge.TermVanishing
+import all KhanSL2.Modules.GradedAssembly
+import all KhanSL2.Modules.CoefficientOperators
+import all KhanSL2.Modules.CoefficientHomology
+import all KhanSL2.BGGBridge.CoefficientOps
+import all KhanSL2.BGGBridge.CoefficientWindows
+import all KhanSL2.BGGBridge.CoefficientComparison
+import all KhanSL2.BGGBridge.TopAlternantsMap
+import all KhanSL2.BGGBridge.TopLadder
+import all KhanSL2.BGGBridge.TopWeights
+import all KhanSL2.BGGBridge.TopSpanning
+import all KhanSL2.BGGBridge.TopGeneratorWindow
+import all KhanSL2.BGGBridge.TopPolynomialMap
+import all KhanSL2.Modules.PolynomialModels
+import all KhanSL2.Modules.WeightedRoots
+import all KhanSL2.Modules.PowerSumCoordinates
+import all KhanSL2.BGGBridge.TopAlternants
+import all KhanSL2.BGGBridge.TopWeightBasis
+import all BGGBridge
+import all KhanSL2.Modules.PolynomialComparison
+import all KhanSL2.Modules.PolynomialSectors
+import all KhanSL2.Modules.PolynomialMap
+import all KhanSL2.Modules.SourceDualPieces
+import all KhanSL2.Modules.SourceDualTaylor
+import all KhanSL2.Modules.SourceDualAssembly
+import all KhanSL2.Modules.SourceDualModel
+import all KhanSL2.Modules.SourceDualShift
+import all KhanSL2.Modules.CoefficientAction
+import all KhanSL2.Modules.ModeShifts
+import all KhanSL2.Modules.CoefficientComparison
+import all KhanSL2.Modules.CoefficientPairing
+import all KhanSL2.Modules.ModeShiftAdjoint
+import all KhanSL2.Modules.ShiftJets
+import all KhanSL2.Modules.ShiftWords
+import all KhanSL2.Modules.CoefficientJetPairing
+import all KhanSL2.Modules.CoefficientLinearity
+import all KhanSL2.Depth.GraphRegular
+import all KhanSL2.Depth.Collision
+import all KhanSL2.Depth.MonicCoeffs
+import all KhanSL2.Depth.Toolkit
+import all KhanSL2.Depth.FiniteMap
+import all KhanSL2.Depth.SourceCoords
+import all KhanSL2.Depth.TwoBlock
+import all KhanSL2.Depth.SourceModules
+import all KhanSL2.Modules.DepthPolynomialComparison
+import all KhanSL2.Modules.DepthModuleComparison
+import all KhanSL2.Modules.BGGAssembly
+import all KhanSL2.Modules
+import all KhanSL2.Depth.Descent
+import all KhanSL2.Depth.SourceDepth
+import all KhanSL2.Depth.SourceDescent
+import all KhanSL2.DepthStatement
+import all Depth
+import all KhanSL2.Conditional.BGGComplex
+import all KhanSL2.Conditional.BGGPower
+import all KhanSL2.Conditional.Coefficients
+import all KhanSL2.Conditional.BGGHomology
+import all KhanSL2.Conditional.BGGAction
+import all KhanSL2.Conditional.TopEmbedding
+import all KhanSL2.Conditional.TopCyclicity
+import all KhanSL2.Conditional.Top
+import all KhanSL2.Conditional.TopCyclicAlgebra
+import all KhanSL2.Conditional.BGGCycleAction
+import all KhanSL2.Conditional.BGGHomologyAction
+import all KhanSL2.Conditional.BGGComparison
+import all KhanSL2.Conditional.TopComparison
+import all KhanSL2.Conditional.TopRankOne
+import all KhanSL2.PolynomialBGG.RootRing
+import all KhanSL2.PolynomialBGG.ColoredWords
+import all KhanSL2.PolynomialBGG.ColoredClasses
+import all KhanSL2.PolynomialBGG.HarmonicSpanning
+import all KhanSL2.PolynomialBGG.FiniteTerms
+import all KhanSL2.PolynomialBGG.RootRingStep
+import all KhanSL2.PolynomialBGG.RootRingCoordinates
+import all KhanSL2.PolynomialBGG.RootRingBaseChange
+import all KhanSL2.PolynomialBGG.RootRingFree
+import all KhanSL2.PolynomialBGG.ProjectiveModel
+import all KhanSL2.PolynomialBGG.ProjectiveModelDeriv
+import all KhanSL2.PolynomialBGG.ProjectiveModelExterior
+import all KhanSL2.PolynomialBGG.ProjectiveModelRetract
+import all KhanSL2.PolynomialBGG.ColoredWindows
+import all KhanSL2.PolynomialBGG.ProjectiveModelWindow
+import all KhanSL2.PolynomialBGG.ProjectiveModelAction
+import all KhanSL2.PolynomialBGG.ProjectiveModelLabelled
+import all KhanSL2.PolynomialBGG.TensorModel
+import all KhanSL2.PolynomialBGG.TensorColors
+import all KhanSL2.PolynomialBGG.TensorAction
+import all KhanSL2.PolynomialBGG.ProjectiveModelLinear
+import all KhanSL2.PolynomialBGG.ProjectiveModelColors
+import all KhanSL2.PolynomialBGG.LabelledRoot
+import all KhanSL2.PolynomialBGG.ProjectiveTerms
+import all KhanSL2.Conditional.BGGInput
+import all KhanSL2.Conditional.DepthAssembly
+import all KhanSL2.Conditional.KernelTransport
+import all KhanSL2.Conditional.Duality
+import all KhanSL2.Deformation.Derivations
+import all KhanSL2.Deformation.Delta
+import all TauCeti.Algebra.Lie.Submodule.Decomposition
+import all KhanSL2.Deformation.Sl2Casimir
+import all KhanSL2.Deformation.RestrictedActions
+import all KhanSL2.Deformation.SplitOps
+import all KhanSL2.Deformation.RelabelOne
+import all KhanSL2.Deformation.SplitDifferential
+import all KhanSL2.Deformation.PureModes
+import all KhanSL2.Deformation.SplitIdentities
+import all KhanSL2.Deformation.Grading
+import all KhanSL2.Deformation.SplitGradings
+import all KhanSL2.Deformation.BDecomposition
+import all KhanSL2.Deformation.CasimirReduction
+import all KhanSL2.Deformation.Staircase
+import all KhanSL2.Deformation.AcyclicOne
+import all KhanSL2.Deformation.Kunneth
+import all KhanSL2.Deformation.SplitExact
+import all KhanSL2.Deformation.SplitMap
+import all KhanSL2.Deformation.CohomologyOps
+import all KhanSL2.Deformation.GeneratorImages
+import all KhanSL2.Deformation.PhiDelta
+import all KhanSL2.Deformation.SourceContraction
+import all KhanSL2.Deformation.SourceHomotopy
+import all KhanSL2.Deformation.LowDegreeStaircase
+import all KhanSL2.Deformation.LowDegree
+import all KhanSL2.Conditional.Assembly
+import all KhanSL2.Conditional
+import all KhanSL2.Deformation.Assembly
+import all KhanSL2.Deformation
+import all KhanSL2.PolynomialBGG
+import all KhanSL2.Macdonald.Basic
+import all KhanSL2.Macdonald.Grading
+import all KhanSL2.Macdonald.FinitePieces
+import all KhanSL2.Macdonald.Generators
+import all KhanSL2.Macdonald.GeneratorDegrees
+import all KhanSL2.Macdonald.CoefficientShift
+import all KhanSL2.Macdonald.GeneratorShift
+import all KhanSL2.Macdonald.Milestone
+import all KhanSL2.Macdonald
+import all KhanSL2.StrongMacdonald.Algebra
+import all KhanSL2.StrongMacdonald.DiffOp
+import all KhanSL2.StrongMacdonald.Derivation
+import all KhanSL2.StrongMacdonald.OrderCalculus
+import all KhanSL2.StrongMacdonald.MkDer
+import all KhanSL2.StrongMacdonald.HomDer
+import all KhanSL2.StrongMacdonald.Local
+import all KhanSL2.StrongMacdonald.Operators
+import all KhanSL2.StrongMacdonald.Laplacian
+import all KhanSL2.StrongMacdonald.LapGen
+import all KhanSL2.StrongMacdonald.NormalForm
+import all KhanSL2.StrongMacdonald.LapSigPsi
+import all KhanSL2.StrongMacdonald.LapPsiPsi
+import all KhanSL2.StrongMacdonald.LapMain
+import all KhanSL2.StrongMacdonald.Herm
+import all KhanSL2.StrongMacdonald.HermBasic
+import all KhanSL2.StrongMacdonald.HermDer
+import all KhanSL2.StrongMacdonald.HermPairs
+import all KhanSL2.StrongMacdonald.HermLap
+import all KhanSL2.StrongMacdonald.Grading
+import all KhanSL2.StrongMacdonald.Subst
+import all KhanSL2.StrongMacdonald.ExpDer
+import all KhanSL2.StrongMacdonald.JetAlg
+import all KhanSL2.StrongMacdonald.Orbit
+import all KhanSL2.StrongMacdonald.OrbitMoves
+import all KhanSL2.StrongMacdonald.Torus
+import all KhanSL2.StrongMacdonald.Project
+import all KhanSL2.StrongMacdonald.Invariants
+import all KhanSL2.StrongMacdonald.Harmonic
+import all KhanSL2.StrongMacdonald.Generators
+import all KhanSL2.StrongMacdonald.SliceRing
+import all KhanSL2.StrongMacdonald.DbarSquare
+import all KhanSL2.StrongMacdonald.HodgeAbstract
+import all KhanSL2.StrongMacdonald.Hodge
+import all KhanSL2.StrongMacdonald
+import all StrongMacdonald
+import all KhanSL2.Collision.NormSplit
+import all KhanSL2.Collision.Statements
+import all KhanSL2.Collision.CoordSplit
+import all KhanSL2.Collision.ChartSplit
+import all KhanSL2.Collision.JFactor
+import all KhanSL2.Collision.Assembly
+import all KhanSL2.Collision.Reduction
+import all KhanSL2.Collision.Completion
+import all KhanSL2.Factorization.RelativeChains
+import all KhanSL2.Factorization.CoefficientMaps
+import all KhanSL2.Factorization.CoefficientMapsExact
+import all KhanSL2.Factorization.RelativeChainsComplex
+import all TauCeti.Algebra.Homology.Bifunctor.Homotopy
+import all TauCeti.Algebra.Homology.CyclesComplex
+import all TauCeti.Algebra.Homology.Monoidal.Homology.Tensor
+import all TauCeti.Algebra.Homology.Monoidal.Summand
+import all TauCeti.Algebra.Homology.Monoidal.Homology.Cross
+import all TauCeti.CategoryTheory.GradedObject.Monoidal
+import all TauCeti.Algebra.Homology.Monoidal.Homology.Connecting
+import all TauCeti.Algebra.Homology.Boundaries
+import all TauCeti.Algebra.Homology.Split
+import all TauCeti.Algebra.Homology.Semisimple
+import all TauCeti.CategoryTheory.Monoidal.Preadditive
+import all TauCeti.Algebra.Homology.Monoidal.Homology.Kunneth.Basic
+import all KhanSL2.Factorization.KunnethField
+import all KhanSL2.Factorization.KunnethGradedTotal
+import all KhanSL2.Factorization.RelativeChainsGrading
+import all KhanSL2.Factorization.RelativeChainsDecomposition
+import all KhanSL2.Factorization.RelativeChainsDualityQuotient
+import all KhanSL2.Factorization.RelativeChainsDuality
+import all KhanSL2.Factorization.RelativeChainsDualityMap
+import all KhanSL2.Factorization.RelativeChainsTotalHomology
+import all KhanSL2.Factorization.RelativeChainsHomologyWindow
+import all KhanSL2.Factorization.RelativeChainsHomologyDecomposition
+import all KhanSL2.Factorization.KunnethTensorModel
+import all KhanSL2.Factorization.RelativeChainsModel
+import all KhanSL2.Factorization.RelativeChainsAction
+import all KhanSL2.Factorization.ShuffleExterior
+import all KhanSL2.Factorization.ShuffleNaturality
+import all KhanSL2.Factorization.ShuffleChainParity
+import all KhanSL2.Factorization.ShuffleTensorDifferential
+import all KhanSL2.Factorization.ShuffleChains
+import all KhanSL2.Factorization.ShuffleEquivariance
+import all KhanSL2.Factorization.ShuffleModel
+import all KhanSL2.Factorization.ShuffleRelativeDifferential
+import all KhanSL2.Factorization.ShuffleEuler
+import all KhanSL2.Factorization.KunnethTensorBigrading
+import all KhanSL2.Factorization.ShuffleParityDegree
+import all TauCeti.Algebra.Homology.Monoidal.Tensor.Differential
+import all KhanSL2.Factorization.KunnethTensorDifferential
+import all KhanSL2.Factorization.KunnethTotalProjection
+import all KhanSL2.Factorization.RelativeChainsHomology
+import all KhanSL2.Factorization.KunnethTotalHomology
+import all KhanSL2.Factorization.RelativeChainsCategoricalHomology
+import all KhanSL2.Factorization.ShuffleCoefficientNaturality
+import all KhanSL2.Factorization.ShuffleRelativeNaturality
+import all KhanSL2.Factorization.ShuffleComplex
+import all KhanSL2.Factorization.ShuffleTotalQuasiIso
+import all KhanSL2.Factorization.KunnethCoefficientMaps
+import all KhanSL2.Factorization.KunnethHomologyDecomposition
+import all KhanSL2.Factorization.KunnethCycleRepresentatives
+import all KhanSL2.Factorization.KunnethQuotient
+import all KhanSL2.Factorization.KunnethCross
+import all KhanSL2.Factorization.KunnethTotal
+import all KhanSL2.Factorization.KunnethTotalNaturality
+import all KhanSL2.Factorization.CoefficientTotalFunctor
+import all KhanSL2.SymmetricFamily.WordCounts
+import all KhanSL2.SymmetricFamily.WordInvariants
+import all KhanSL2.SymmetricFamily.SignedTensor
+import all KhanSL2.Macdonald.SymmetricCoefficients
+import all KhanSL2.Macdonald.CurrentAction
+import all KhanSL2.Macdonald.CurrentActionShift
+import all KhanSL2.Macdonald.SymmetricCoefficientsModule
+import all KhanSL2.Macdonald.CurrentActionDegree
+import all KhanSL2.SymmetricFamily.PolynomialWords
+import all KhanSL2.SymmetricFamily.TensorWords
+import all KhanSL2.SymmetricFamily.TensorMultiplication
+import all KhanSL2.SymmetricFamily.DerivationProduct
+import all KhanSL2.SymmetricFamily.TensorDerivations
+import all KhanSL2.SymmetricFamily.LabelledRoots
+import all KhanSL2.SymmetricFamily.CoefficientAction
+import all KhanSL2.SymmetricFamily.CurrentSlots
+import all KhanSL2.SymmetricFamily.ExteriorLabelled
+import all KhanSL2.SymmetricFamily.FiniteProjective
+import all KhanSL2.SymmetricFamily.ExteriorCoefficients
+import all KhanSL2.SymmetricFamily.ExteriorCurrent
+import all KhanSL2.SymmetricFamily.CoefficientBaseChange
+import all KhanSL2.Factorization.CoefficientTotalScalars
+import all KhanSL2.Factorization.CoefficientChainScalars
+import all KhanSL2.Factorization.CoefficientChainMaps
+import all KhanSL2.Factorization.FiniteBGGTransferScalars
+import all KhanSL2.Factorization.FiniteBGGTransferContraction
+import all KhanSL2.Factorization.FiniteBGGTransferDegrees
+import all KhanSL2.Factorization.FiniteBGGTransferHomotopy
+import all KhanSL2.Factorization.FiniteBGGTransferNaturality
+import all KhanSL2.Factorization.FiniteBGGTransferWindow
+import all KhanSL2.Factorization.FibreSurjectivity
+import all KhanSL2.Factorization.FibreKernel
+import all KhanSL2.Factorization.FibreComplex
+import all KhanSL2.Factorization.FiniteBGGComplex
+import all KhanSL2.Factorization.FiniteBGGTransferTerms
+import all KhanSL2.Factorization.FiniteBGGTransferEquivalence
+import all KhanSL2.Factorization.RelativeChainsScalarExtension
+import all KhanSL2.Factorization.RelativeChainsScalarEquivalence
+import all KhanSL2.Factorization.RelativeChainsScalarDegrees
+import all KhanSL2.Factorization.FlatAcyclic
+import all KhanSL2.Factorization.ComplexExactness
+import all KhanSL2.Factorization.QuasiIsoElements
+import all KhanSL2.Factorization.NonnegativeCone
+import all KhanSL2.Factorization.NonnegativeConeQuasiIso
+import all KhanSL2.Factorization.NonnegativeConeBaseChange
+import all KhanSL2.Factorization.RelativeChainsScalarComplex
+import all KhanSL2.Factorization.ScalarComplexHomotopy
+import all KhanSL2.Factorization.FiniteBGGTransferBaseChange
+import all KhanSL2.SymmetricFamily.AverageBaseChange
+import all KhanSL2.SymmetricFamily.TensorBaseChange
+import all KhanSL2.SymmetricFamily.RootCharacteristic
+import all KhanSL2.Factorization.WeightedRootsBasic
+import all KhanSL2.Factorization.WeightedRootsIdempotents
+import all KhanSL2.Factorization.WeightedRootsFactors
+import all KhanSL2.Factorization.WeightedRootsSplitting
+import all KhanSL2.Factorization.WeightedRootsAlgebra
+import all KhanSL2.SymmetricFamily.RootBaseChange
+import all KhanSL2.SymmetricFamily.Assignments
+import all KhanSL2.SymmetricFamily.RootAssignmentSplit
+import all KhanSL2.SymmetricFamily.RootPermutation
+import all KhanSL2.SymmetricFamily.BaseChangedLabelled
+import all KhanSL2.SymmetricFamily.RootUniversal
+import all KhanSL2.Factorization.OrbitStabilizer
+import all KhanSL2.Factorization.OrbitStabilizerQuotient
+import all KhanSL2.SymmetricFamily.RootAssignmentTransport
+import all KhanSL2.SymmetricFamily.RootAssignmentCanonical
+import all KhanSL2.SymmetricFamily.ColorPermutation
+import all KhanSL2.SymmetricFamily.TensorPiLeft
+import all KhanSL2.Factorization.OrbitStabilizerTensor
+import all KhanSL2.Factorization.OrbitStabilizerDecomposition
+import all KhanSL2.SymmetricFamily.ColoredAssignmentSplit
+import all KhanSL2.SymmetricFamily.BlockStabilizer
+import all KhanSL2.SymmetricFamily.ColorBlocks
+import all KhanSL2.SymmetricFamily.RootFactorAlgebra
+import all KhanSL2.SymmetricFamily.RootBlocks
+import all KhanSL2.SymmetricFamily.RootFactorKernel
+import all KhanSL2.SymmetricFamily.RootBlockUniversal
+import all KhanSL2.SymmetricFamily.RootBlockTensor
+import all KhanSL2.SymmetricFamily.FactorRootScalars
+import all KhanSL2.SymmetricFamily.RootBlockPermutation
+import all KhanSL2.SymmetricFamily.BaseChangedAction
+import all KhanSL2.SymmetricFamily.FactorCoefficients
+import all KhanSL2.SymmetricFamily.FixedReindex
+import all KhanSL2.Factorization.OrbitStabilizerAverage
+import all KhanSL2.Factorization.OrbitStabilizerTensorInvariants
+import all KhanSL2.SymmetricFamily.FactorPermutation
+import all KhanSL2.Factorization.OrbitStabilizerFixedCongr
+import all KhanSL2.SymmetricFamily.ColoredBlockTensor
+import all KhanSL2.SymmetricFamily.SymmetricChart
+import all KhanSL2.SymmetricFamily.ExteriorBaseChangedAction
+import all KhanSL2.SymmetricFamily.ExteriorBaseChangedLabelled
+import all KhanSL2.Factorization.OrbitStabilizerTwist
+import all KhanSL2.SymmetricFamily.SignedRepresentation
+import all KhanSL2.SymmetricFamily.FactorExterior
+import all KhanSL2.SymmetricFamily.SignedTensorAction
+import all KhanSL2.SymmetricFamily.ExteriorChart
+import all KhanSL2.SymmetricFamily.ExteriorChartInclusion
+import all KhanSL2.SymmetricFamily.SymmetricChartInclusion
+import all KhanSL2.SymmetricFamily.FactorInsertion
+import all KhanSL2.SymmetricFamily.RootTensorWords
+import all KhanSL2.SymmetricFamily.AssignmentAveraging
+import all KhanSL2.SymmetricFamily.BlockAverageNormalization
+import all KhanSL2.SymmetricFamily.SymmetricBlockWords
+import all KhanSL2.SymmetricFamily.WordBlock
+import all KhanSL2.SymmetricFamily.SymmetricBlockCoproduct
+import all KhanSL2.Macdonald.CurrentActionFunctorial
+import all KhanSL2.Macdonald.SymmetricCoefficientsCoproduct
+import all KhanSL2.Macdonald.SymmetricCoefficientsProjection
+import all KhanSL2.Macdonald.SymmetricCoefficientsComponents
+import all KhanSL2.SymmetricFamily.CoproductWords
+import all KhanSL2.SymmetricFamily.SymmetricCurrentBlock
+import all KhanSL2.SymmetricFamily.CurrentTensorBlocks
+import all KhanSL2.SymmetricFamily.CurrentTensorSection
+import all KhanSL2.SymmetricFamily.RootTensorBlocks
+import all KhanSL2.SymmetricFamily.ExteriorTensorSection
+import all KhanSL2.Factorization.ExteriorBlockCoproduct
+import all KhanSL2.Factorization.ExteriorBlockTensor
+import all KhanSL2.SymmetricFamily.ExteriorPowerCoproduct
+import all KhanSL2.SymmetricFamily.ExteriorChartCoproduct
+import all KhanSL2.Factorization.BalancedCoefficients
+import all KhanSL2.SymmetricFamily.FactorCurrent
+import all KhanSL2.SymmetricFamily.ExteriorBlockCurrent
+import all KhanSL2.SymmetricFamily.CoefficientMapRecognition
+import all KhanSL2.SymmetricFamily.ExteriorChartCurrent
+import all KhanSL2.Factorization.BalancedShuffleRaw
+import all KhanSL2.Factorization.BalancedShuffleRelative
+import all KhanSL2.Factorization.BalancedShuffleDifferential
+import all KhanSL2.Factorization.BalancedTensorModel
+import all KhanSL2.Factorization.BalancedTensorDifferential
+import all KhanSL2.Factorization.BalancedTensorHomogeneous
+import all KhanSL2.Factorization.BalancedShuffleComplex
+import all KhanSL2.Factorization.CoefficientChainEquivalence
+import all KhanSL2.Factorization.FiniteBGGChart
+import all KhanSL2.Factorization.FiniteTensorTerms
+import all KhanSL2.SymmetricFamily.SymmetricChartCurrent
+import all KhanSL2.SymmetricFamily.FactorCoprime
+import all KhanSL2.SymmetricFamily.FactorCoprimeExterior
+import all KhanSL2.Factorization.ShuffleComplexNaturality
+import all KhanSL2.Factorization.CoefficientSplitExact
+import all KhanSL2.Factorization.TensorCoefficientDegrees
+import all KhanSL2.Factorization.ComplexDevissage
+import all KhanSL2.Factorization.NonnegativeConeMaps
+import all KhanSL2.Factorization.NonnegativeConeDevissage
+import all KhanSL2.Factorization.ShuffleDevissage
+import all KhanSL2.Factorization.CoefficientSplitExactLeft
+import all KhanSL2.Factorization.TensorCoefficientDegreesLeft
+import all KhanSL2.Factorization.ShuffleDevissageSecond
+import all KhanSL2.Factorization.ShuffleRetracts
+import all KhanSL2.Factorization.ShuffleZero
+import all KhanSL2.Factorization.ShuffleFiniteSum
+import all KhanSL2.Factorization.ShuffleEquivalences
+import all KhanSL2.Factorization.CoefficientSplitFinite
+import all KhanSL2.Factorization.FiniteCurrent
+import all KhanSL2.Factorization.ShuffleFiniteFiltration
+import all KhanSL2.Factorization.ShuffleSubmoduleFiltration
+import all KhanSL2.Factorization.FiniteExtensionFiltration
+import all KhanSL2.Macdonald.Evaluation
+import all KhanSL2.Macdonald.EvaluationIrreducible
+import all KhanSL2.Factorization.EvenTensorWords
+import all KhanSL2.SymmetricFamily.RootAveraging
+import all KhanSL2.SymmetricFamily.RootScalarInvariants
+import all KhanSL2.SymmetricFamily.LocalRootAlgebra
+import all KhanSL2.SymmetricFamily.LocalRootResidue
+import all KhanSL2.SymmetricFamily.LocalRootInvariants
+import all KhanSL2.SymmetricFamily.IdealTensorFiltration
+import all KhanSL2.SymmetricFamily.LocalRootFiltration
+import all KhanSL2.SymmetricFamily.ColorWeights
+import all KhanSL2.Factorization.EvenWeightBounds
+import all KhanSL2.Factorization.EvenWeightBoundsBasis
+import all KhanSL2.SymmetricFamily.ColorAnnihilator
+import all KhanSL2.SymmetricFamily.ColorTopLine
+import all KhanSL2.SymmetricFamily.LocalRootTopLine
+import all KhanSL2.SymmetricFamily.LocalCoefficients
+import all KhanSL2.Factorization.EvenWeightBoundsInheritance
+import all KhanSL2.SymmetricFamily.LocalFiltration
+import all KhanSL2.Macdonald.EvaluationRecognition
+import all KhanSL2.SymmetricFamily.LocalGraded
+import all KhanSL2.Macdonald.EvaluationFunctor
+import all TauCeti.LinearAlgebra.Dimension.DirectSum
+import all TauCeti.Algebra.Lie.Sl2.Decomposition
+import all KhanSL2.Factorization.EvenWeightBoundsDecomposition
+import all KhanSL2.SymmetricFamily.LocalGradedBounds
+import all KhanSL2.Factorization.EvenWeightBoundsTop
+import all KhanSL2.Factorization.EvenWeightBoundsTopQuotient
+import all KhanSL2.SymmetricFamily.LocalTop
+import all KhanSL2.SymmetricFamily.LocalTopQuotient
+import all KhanSL2.SymmetricFamily.LocalKernelFiltration
+import all KhanSL2.SymmetricFamily.LocalKernelBounds
+import all KhanSL2.SymmetricFamily.LocalExteriorCoefficients
+import all KhanSL2.SymmetricFamily.LocalExteriorFiltration
+import all KhanSL2.Macdonald.EvaluationQuotient
+import all KhanSL2.SymmetricFamily.LocalExteriorGraded
+import all KhanSL2.SymmetricFamily.LocalExteriorBounds
+import all KhanSL2.Macdonald.EvaluationDirectSum
+import all KhanSL2.SymmetricFamily.LocalShuffleClosure
+import all KhanSL2.SymmetricFamily.LocalEvenGenerated
+import all KhanSL2.Factorization.QuotientPath
+import all KhanSL2.Factorization.ShuffleSurjectiveQuotient
+import all KhanSL2.SymmetricFamily.SymmetricTensorWords
+import all KhanSL2.Factorization.EvenTensorPolynomial
+import all KhanSL2.Factorization.EvenTensorPolynomialDecomposition
+import all KhanSL2.Factorization.CurrentTensorEquiv
+import all KhanSL2.SymmetricFamily.FactorSymmetricTensorWords
+import all KhanSL2.SymmetricFamily.FactorTensorWords
+import all KhanSL2.Factorization.EvenTensorShuffle
+import all KhanSL2.SymmetricFamily.ExteriorFibreShuffle
+import all KhanSL2.SymmetricFamily.CoefficientBaseChangeAssoc
+import all KhanSL2.Factorization.ResultantChartUniversal
+import all KhanSL2.Factorization.ResultantChartTensor
+import all KhanSL2.Factorization.ResultantChartTensorEvaluation
+import all KhanSL2.SymmetricFamily.FactorSpecializationExterior
+import all KhanSL2.Factorization.BalancedScalarCoefficients
+import all KhanSL2.Factorization.ScalarTensorDegrees
+import all KhanSL2.Factorization.ScalarTensorEquivalence
+import all KhanSL2.Factorization.ScalarTensorDifferential
+import all KhanSL2.Factorization.ScalarTensorComplex
+import all KhanSL2.Factorization.BalancedScalarComplex
+import all KhanSL2.Factorization.BalancedScalarNaturality
+import all KhanSL2.Factorization.BalancedScalarDiagram
+import all KhanSL2.Factorization.BalancedScalarReflection
+import all KhanSL2.Factorization.CoefficientChainRestriction
+import all KhanSL2.Factorization.CoefficientChainNative
+import all KhanSL2.Factorization.BalancedTensorRestriction
+import all KhanSL2.Factorization.BalancedShuffleNative
+import all KhanSL2.Factorization.FiniteBGGFibres
+import all KhanSL2.Factorization.ScalarMapFunctoriality
+import all KhanSL2.Factorization.ResultantChartTensorEquiv
+import all KhanSL2.Factorization.ResultantChartEquivalence
+import all KhanSL2.Factorization.ResultantChartFlat
+import all KhanSL2.Factorization.ResultantChartFactorFlat
+import all KhanSL2.Factorization.ResultantChartClosedPoints
+import all KhanSL2.Factorization.QuasiIsoBaseChange
+import all KhanSL2.Factorization.TensorCoefficientEquiv
+import all KhanSL2.Factorization.ResultantChartFibreDetection
+import all KhanSL2.Factorization.FiniteBGGChartQuasiIso
+import all KhanSL2.Factorization.FiniteBGGHomology
+import all KhanSL2.Factorization.FlatScalarHomology
+import all KhanSL2.Factorization.FlatComplexHomology
+import all KhanSL2.Factorization.FiniteBGGChartHomology
+import all KhanSL2.Factorization.ExternalTensor
+import all KhanSL2.Factorization.HomologyScalarAction
+import all KhanSL2.Factorization.ExternalKunneth
+import all KhanSL2.Factorization.HomogeneousCoefficientScalars
+import all KhanSL2.Factorization.BalancedTensorProjection
+import all KhanSL2.Factorization.BalancedTensorCycleDegrees
+import all KhanSL2.Factorization.CoefficientDegreeHomology
+import all KhanSL2.Factorization.FiniteBGGNativeHomology
+import all KhanSL2.Factorization.FiniteBGGFactorSide
+import all KhanSL2.Factorization.TensorHomogeneousScalars
+import all KhanSL2.Factorization.ScalarPairHomology
+import all KhanSL2.Factorization.ExternalTotalHomology
+import all KhanSL2.Factorization.ExternalChainScalars
+import all KhanSL2.Factorization.FiniteDegreeTensor
+import all KhanSL2.Factorization.ExternalTensorDegreeScalars
+import all KhanSL2.Factorization.ExternalTensorDegreeSum
+import all KhanSL2.Factorization.FiniteDegreeTensorRing
+import all KhanSL2.Factorization.ShortQuotientCongr
+import all KhanSL2.Factorization.CoefficientFlatHomology
+import all KhanSL2.Factorization.LinearModuleHomology
+import all KhanSL2.Factorization.BalancedTotalHomology
+import all KhanSL2.Factorization.ExternalFlatChainComparison
+import all KhanSL2.Factorization.ExternalFlatChainCycles
+import all KhanSL2.Factorization.MixedExternalBaseChange
+import all KhanSL2.Factorization.MixedExternalBaseChangeInverse
+import all KhanSL2.Factorization.MixedExternalBaseChangeEquiv
+import all KhanSL2.Factorization.ExternalFlatBalancedKunneth
+import all KhanSL2.Factorization.BalancedTensorEndpoint
+import all KhanSL2.Factorization.ExternalBalancedDegrees
+import all KhanSL2.Factorization.ExternalBalancedDegreeForget
+import all KhanSL2.Factorization.ExternalBalancedComplex
+import all KhanSL2.Factorization.ExternalTensorDegreeHomology
+import all KhanSL2.Factorization.DegreeKunnethField
+import all KhanSL2.Factorization.DegreeExternalKunneth
+import all KhanSL2.Factorization.DegreeExternalBaseChange
+import all KhanSL2.Factorization.DegreeBalancedKunneth
+import all KhanSL2.Factorization.ResultantChartProductFlat
+import all KhanSL2.Factorization.ResultantChartProductScalars
+import all KhanSL2.Factorization.FiniteBGGChartFactorization
+import all KhanSL2.Macdonald.StrongBridgeAlgebra
+import all KhanSL2.Macdonald.Pairing
+import all KhanSL2.Macdonald.RestrictedTranspose
+import all KhanSL2.Macdonald.StrongBridgeGrading
+import all KhanSL2.Macdonald.StrongBridgeGenerators
+import all KhanSL2.Macdonald.StrongBridgeExterior
+import all KhanSL2.Macdonald.PolynomialFactorial
+import all KhanSL2.Macdonald.PolynomialPairing
+import all KhanSL2.Macdonald.DerivationFiniteSum
+import all KhanSL2.Macdonald.CurrentAdjoint
+import all KhanSL2.Macdonald.StrongBridgeDerivations
+import all KhanSL2.Macdonald.StrongBridgeDifferential
+import all KhanSL2.Macdonald.TensorPairing
+import all KhanSL2.Macdonald.ChainModel
+import all KhanSL2.Macdonald.StrongBridgePairing
+import all KhanSL2.Macdonald.CurrentActionWeight
+import all KhanSL2.Macdonald.ChainGrading
+import all KhanSL2.Macdonald.RestrictedCohomology
+import all KhanSL2.Macdonald.StrongBridgeInvariants
+import all KhanSL2.Macdonald.StrongBridgeHodge
+import all KhanSL2.Macdonald.StrongBridgeCohomology
+import all KhanSL2.Macdonald.StrongBridgeFreeCoordinates
+import all KhanSL2.Macdonald.StrongBridgeFreeGrading
+import all KhanSL2.Macdonald.StrongBridgeFreePieces
+import all KhanSL2.Factorization.RelativeChainsWeightProjection
+import all KhanSL2.Factorization.RelativeChainsWeightRelations
+import all KhanSL2.Factorization.RelativeChainsDualityPerfect
+import all KhanSL2.Factorization.RelativeChainsWeightHomology
+import all KhanSL2.Macdonald.StrongBridgeWeightCohomology
+import all KhanSL2.Macdonald.StrongBridgeWeightEvaluation
+import all KhanSL2.SymmetricFamily.UncoloredWords
+import all KhanSL2.Macdonald.StrongBridgeFreeIndices
+import all KhanSL2.Macdonald.StrongBridgeFreePieceCoordinates
+import all KhanSL2.Macdonald.StrongBridgeHomologyCoordinates
+import all KhanSL2.Factorization.RelativeChainsWeightDecomposition
+import all KhanSL2.Factorization.RelativeChainsWeightTotalHomology
+import all KhanSL2.Macdonald.StrongBridgeTotalCoordinates
+import all KhanSL2.Macdonald.StrongBridgeNormalization
+import all KhanSL2.SymmetricFamily.UncoloredTensor
+import all KhanSL2.SymmetricFamily.UncoloredExterior
+import all KhanSL2.Macdonald.StrongBridgeRootModel
+import all KhanSL2.Macdonald.StrongBridgeIndexDegree
+import all KhanSL2.Factorization.RelativeChainsSymmetricDegree
+import all KhanSL2.Factorization.RelativeChainsSlice
+import all KhanSL2.Factorization.RelativeChainsSymmetricHomology
+import all KhanSL2.Macdonald.StrongBridgeFixedRootModel
+import all KhanSL2.Macdonald.RootEvenAlgebra
+import all KhanSL2.Macdonald.ShiftAdjoint
+import all KhanSL2.Macdonald.StrongBridgeFreeRaisingExterior
+import all KhanSL2.Macdonald.StrongBridgeShift
+import all KhanSL2.Macdonald.StrongBridgeFreeAction
+import all KhanSL2.Macdonald.StrongBridgeFreeRaising
+import all KhanSL2.Macdonald.RootEvenEmbedding
+import all KhanSL2.Macdonald.ExteriorCoproductPairing
+import all KhanSL2.Macdonald.RootOddEmbedding
+import all KhanSL2.Macdonald.RootMonomialEmbeddings
+import all KhanSL2.Macdonald.RootOddShift
+import all KhanSL2.Macdonald.RootEvenShift
+import all KhanSL2.Macdonald.RootFreeBidegree
+import all KhanSL2.Macdonald.StrongBridgeTotalEvaluation
+import all KhanSL2.Macdonald.StrongBridgeHomologyPairing
+import all KhanSL2.Macdonald.RootFreeCoordinates
+import all KhanSL2.Macdonald.RootPolynomialAction
+import all KhanSL2.Macdonald.StrongBridgeHomologyShift
+import all KhanSL2.Macdonald.StrongBridgeHomologyRaising
+import all KhanSL2.Macdonald.StrongBridgeRootAction
+import all KhanSL2.Macdonald.StrongBridgeFixedCoordinates
+import all KhanSL2.Macdonald.StrongBridgeFixedRootInclusion
+import all KhanSL2.Macdonald.StrongBridgeFixedRootAction
+import all KhanSL2.Factorization.WeightedRootModel
+import all KhanSL2.Factorization.WeightedRootModelAction
+import all KhanSL2.Factorization.WeightedRootModelInvariants
+import all KhanSL2.Factorization.WeightedRootModelPolynomialActions
+import all KhanSL2.Factorization.OrbitStabilizerCongr
+import all KhanSL2.Factorization.WeightedRootModelTensor
+import all KhanSL2.Factorization.WeightedRootModelPowerSums
+import all KhanSL2.Macdonald.StrongBridgeFixedSignedRoots
+import all KhanSL2.Macdonald.StrongBridgeRootCoefficientLinear
+import all KhanSL2.Factorization.KunnethTotalInverse
+import all KhanSL2.Factorization.ShuffleSymmetric
+import all KhanSL2.Factorization.ShuffleSymmetricTotal
+import all KhanSL2.Factorization.ShuffleSymmetricProjection
+import all KhanSL2.Factorization.ShuffleSymmetricKunneth
+import all KhanSL2.Factorization.ShuffleSymmetricKunnethProjection
+import all KhanSL2.Macdonald.StrongBridgeFixedRootProjection
+import all KhanSL2.Macdonald.StrongBridgeFixedCoproductComponents
+import all KhanSL2.Macdonald.PolynomialCoproductPairing
+import all KhanSL2.Macdonald.MixedCoproductPairing
+import all KhanSL2.Macdonald.MixedCoproductComparison
+import all KhanSL2.Macdonald.StrongBridgeHomologyCoproductEvaluation
+import all KhanSL2.Macdonald.StrongBridgeHomologyCoproduct
+import all KhanSL2.Macdonald.StrongBridgeHomologyCoproductTensor
+import all KhanSL2.Macdonald.StrongBridgeHomologyCoproductFree
+import all KhanSL2.Macdonald.StrongBridgeHomologyCoproductCompatibility
+import all KhanSL2.SymmetricFamily.PolynomialPrimitiveNaturality
+import all KhanSL2.Macdonald.RootFreeCoproductNaturality
+import all KhanSL2.Factorization.ExteriorShuffleAssignments
+import all KhanSL2.Factorization.ExteriorShuffleBlocks
+import all KhanSL2.Factorization.ExteriorShuffleComponents
+import all KhanSL2.Macdonald.RootBidegreeProjection
+import all KhanSL2.Factorization.WeightedRootModelBaseChange
+import all KhanSL2.Factorization.WeightedRootModelUniversal
+import all KhanSL2.Factorization.WeightedRootModelFactorAlgebra
+import all KhanSL2.Factorization.WeightedRootModelAssignments
+import all KhanSL2.Factorization.OrbitStabilizerOrbits
+import all KhanSL2.Factorization.WeightedRootModelOrbits
+import all KhanSL2.Factorization.WeightedRootModelBlocks
+import all KhanSL2.Factorization.WeightedRootModelBlockUniversal
+import all KhanSL2.Factorization.WeightedRootModelBlockTensor
+import all KhanSL2.SymmetricFamily.RootPolynomialBlock
+import all KhanSL2.Macdonald.RootWeightedBlockRestriction
+import all KhanSL2.SymmetricFamily.SignedWordBlock
+import all KhanSL2.Macdonald.RootOddBlockRestriction
+import all KhanSL2.Macdonald.RootEvenBlock
+import all KhanSL2.Macdonald.RootEvenBlockRestriction
+import all KhanSL2.Macdonald.RootBidegreeCoproductComparison
+import all KhanSL2.Macdonald.RootMixedCoproductComponents
+import all KhanSL2.Macdonald.RootFreeWeightedCoproduct
+import all KhanSL2.Macdonald.RootCoproductOffBidegree
+import all KhanSL2.Macdonald.RootFactorizationNormalization
+import all KhanSL2.Macdonald.FixedHomologyRootCoproduct
+import all KhanSL2.Factorization.WeightedRootModelBlockGroup
+import all KhanSL2.Factorization.WeightedRootModelChartAction
+import all KhanSL2.Factorization.WeightedRootModelFactorAction
+import all KhanSL2.Factorization.WeightedRootModelBlockEquivariance
+import all KhanSL2.Factorization.WeightedRootModelChartOrbits
+import all KhanSL2.Factorization.WeightedRootModelSplitting
+import all KhanSL2.Macdonald.NormalizedSignedRootFactorization
+import all KhanSL2.Macdonald.FixedRootHomologyBaseChange
+import all KhanSL2.Macdonald.RootDegreeAllocations
+import all KhanSL2.Macdonald.FactorHomologyRootChart
+import all KhanSL2.Factorization.WeightedRootModelBlockFormulas
+import all KhanSL2.Macdonald.WeightedFactorRootScalars
+import all KhanSL2.Macdonald.WeightedRootBlockEvaluation
+import all KhanSL2.Macdonald.RootHomologyFactorSpecialization
+import all KhanSL2.Macdonald.HomologyRootChartComponents
+import all KhanSL2.Macdonald.SpecializedHomologyCoproduct
+import all KhanSL2.SymmetricFamily.SymmetricChartNormalization
+import all KhanSL2.SymmetricFamily.ExteriorChartNormalization
+import all KhanSL2.SymmetricFamily.ChartScalars
+import all KhanSL2.SymmetricFamily.SymmetricChainLabelled
+import all KhanSL2.SymmetricFamily.SymmetricChainProjective
+import all KhanSL2.SymmetricFamily.SymmetricChainFlat
+import all KhanSL2.SymmetricFamily.SymmetricChartComplex
+import all KhanSL2.SymmetricFamily.SymmetricChartChainUnit
+import all KhanSL2.SymmetricFamily.ChartHomologyKunneth
+import all KhanSL2.Macdonald.WeightedFirstOrbitFactor
+import all KhanSL2.Macdonald.WeightedRootFactorizationComponent
+import all KhanSL2.Macdonald.FixedRootChartBlockComparison
+import all KhanSL2.Macdonald.ActualHomologyRootChart
+import all KhanSL2.SymmetricFamily.NormalizedCoproductCycles
+import all KhanSL2.Factorization.BalancedTotalQuasiIso
+import all KhanSL2.SymmetricFamily.SymmetricChartHomology
+import all KhanSL2.SymmetricFamily.SymmetricChartSpecialization
+import all KhanSL2.SymmetricFamily.FactorSpecialization
+import all KhanSL2.SymmetricFamily.NativeShuffle
+import all KhanSL2.SymmetricFamily.SymmetricFibreShuffle
+import all KhanSL2.SymmetricFamily.SymmetricUniversalChart
+import all KhanSL2.SymmetricFamily.SymmetricTensorShuffle
+import all KhanSL2.SymmetricFamily.SymmetricTensorShuffleProved
+import all KhanSL2.Collision.Proof
+import all Collision
+import all MainProof
+import all KhanSL2All
+
+import all ReviewChecks
+import all MergeCheck
+
+public import Lean.Elab.Command
+public import Lean.Util.CollectAxioms
+
+open Lean Elab Command
+
+/-- Audit the combined M2, BGG bridge, and concrete-module environment, including private proof bodies. -/
+elab "#audit_combined_project" : command => do
+  let env ← getEnv
+  for removed in #[`KhanSL2.Conditional.RemainingInputs.lowDegrees,
+      `KhanSL2.Conditional.RemainingInputs.polynomialBGG,
+      `KhanSL2.Conditional.BGGPolynomialProperties.finite,
+      `KhanSL2.Conditional.BGGPolynomialProperties.top,
+      `KhanSL2.Conditional.BGGScalarStructure,
+      `KhanSL2.Conditional.BGGPolynomialProperties.compatibleScalars,
+      `KhanSL2.Conditional.BGGPolynomialProperties.comparison_smul] do
+    if (env.find? removed).isSome then
+      throwError "Discharged properties must not remain input fields: {removed}"
+  if (env.find? `KhanSL2.Conditional.BGGPolynomialProperties.above).isSome then
+    throwError "Above-degree vanishing must be proved, not retained as an input field."
+  let isProjectModule := fun (name : Name) =>
+    (`KhanSL2).isPrefixOf name || #[`BGG, `BGGBridge, `Depth, `Conditional, `Deformation, `KhanSL2All, `ReviewChecks, `MergeCheck, `Macdonald, `StrongMacdonald, `Collision].contains name
+  for imported in env.header.modules do
+    if isProjectModule imported.module && !imported.importAll then
+      throwError "Audit must import all project proof bodies: {imported.module}."
+  for name in #[`KhanSL2.phi_injective, `KhanSL2.Current.milestoneM2,
+      `KhanSL2.Current.milestoneBGGBridge,
+      `KhanSL2.BGGBridge.bggTerm_eq_bot_of_lt,
+      `KhanSL2.Conditional.BGGComplex.term_subsingleton_of_lt,
+      `KhanSL2.Conditional.psi_above_injective,
+      `KhanSL2.Conditional.BGGComplex.differential_smul,
+      `KhanSL2.Conditional.canonicalComparison_smul,
+      `KhanSL2.lowDegreeStep,
+      `KhanSL2.Conditional.mainStatement_of_inputs,
+      `KhanSL2.Conditional.mainStatement_of_collisionSupport,
+      `KhanSL2.Conditional.polynomialBGGInput,
+      `KhanSL2.PolynomialBGG.bggTerm_finite,
+      `KhanSL2.PolynomialBGG.bggTerm_projective,
+      `KhanSL2.PolynomialBGG.rootPolynomial_free,
+      `KhanSL2.Conditional.psiB_bijective_of_inputs,
+      `KhanSL2.Modules.psiBLinear_surjective, `KhanSL2.Modules.psiB_smul,
+      `KhanSL2.Modules.psiB_eq_sourceDualEquiv_comp_psiTotal,
+      `KhanSL2.Depth.milestoneDepth, `KhanSL2.Depth.depth_JB_ge,
+      `KhanSL2.Modules.psiTotal_surjective, `KhanSL2.Modules.sourceFunctional_restrict,
+      `KhanSL2.Current.psiK_apply, `KhanSL2.Current.psiK_surjective,
+      `KhanSL2.Current.Phi_boundary, `KhanSL2.LieChains.boundary_boundary,
+      `KhanSL2.BGG.relative_bgg_resolution,
+      `KhanSL2.BGG.TermResolution.exact_energyDifferentials,
+      `KhanSL2.BGG.TermResolution.relative_admissibility] do
+    match env.find? name with
+    | some (.thmInfo _) => pure ()
+    | _ => throwError "{name} must be a proved theorem."
+  let names := env.constants.toList.filterMap fun (name, info) =>
+    let fromProject := match env.getModuleIdxFor? name with
+      | some idx => isProjectModule env.header.moduleNames[idx.toNat]!
+      | none => false
+    if fromProject && !info.isUnsafe then some name else none
+  for required in #[`KhanSL2.phi_injective, `KhanSL2.Current.milestoneM2,
+      `KhanSL2.BGG.relative_bgg_resolution, `KhanSL2.Current.kEquivBGGHomology,
+      `KhanSL2.Modules.sourceDualEquiv, `KhanSL2.Modules.coefficientAction,
+      `KhanSL2.Modules.psiBLinear, `KhanSL2.Modules.depthJBEquiv,
+      `KhanSL2.Modules.psiB, `KhanSL2.Modules.nu, `KhanSL2.Modules.kTotalEquivBGG,
+      `KhanSL2.Review.mainStatement_iff_v1,
+      `Module.Basis.repr_apply_of_diagonal, `Module.Basis.apply_eq_smul_iff_of_diagonal] do
+    unless names.contains required do
+      throwError "Required project declaration is missing from the audit: {required}"
+  let allowed := #[`propext, `Classical.choice, `Quot.sound]
+  for name in names do
+    for axiomName in (← collectAxioms name) do
+      unless allowed.contains axiomName do
+        throwError "Forbidden axiom in {name}: {axiomName}"
+  logInfo m!"PASS: {names.length} safe declarations in the combined M2 + BGG bridge + depth + coefficient-linear + conditional project; no sorryAx or additional axioms."
+
+#check (KhanSL2.phi_injective : Function.Injective KhanSL2.phi)
+#check (KhanSL2.mainStatement_iff_surjective :
+  KhanSL2.MainStatement ↔ Function.Surjective KhanSL2.phi)
+#check (KhanSL2.Current.dictionary : ∀ (p B : ℕ) (S : ℤ),
+  KhanSL2.cohomologyPiece (KhanSL2.Current.kDegree p B S) ≃ₗ[ℂ]
+    Module.Dual ℂ (KhanSL2.Current.K p B S))
+#check (KhanSL2.Current.psiK_surjective : ∀ (p B : ℕ) (S : ℤ),
+  Function.Surjective (KhanSL2.Current.psiK p B S))
+#check (KhanSL2.BGG.relative_bgg_resolution :
+  Nonempty KhanSL2.BGG.RelativeBGGResolution)
+
+#audit_combined_project
+#print axioms KhanSL2.Current.milestoneM2
+#print axioms KhanSL2.BGG.relative_bgg_resolution
+#print axioms KhanSL2.Review.mainStatement_iff_v1
+
+#print axioms KhanSL2.Current.milestoneBGGBridge
+#print axioms KhanSL2.Modules.psiB
+#print axioms KhanSL2.Modules.kTotalEquivBGG
+
+#print axioms KhanSL2.Depth.milestoneDepth
+#print axioms KhanSL2.Modules.sourceDualEquiv
+#print axioms KhanSL2.Modules.psiBLinear_surjective
+
+#check (KhanSL2.Conditional.mainStatement_of_inputs : KhanSL2.Conditional.RemainingInputs → KhanSL2.MainStatement)
+#print axioms KhanSL2.Conditional.mainStatement_of_inputs
+
+#check (KhanSL2.BGGBridge.bggTerm_eq_bot_of_lt : ∀ B p : ℕ, B < p → ∀ S : ℤ,
+  KhanSL2.BGGBridge.bggTerm p B S = ⊥)
+#check (KhanSL2.Conditional.BGGComplex.term_subsingleton_of_lt : ∀ B p : ℕ, B < p →
+  Subsingleton (KhanSL2.Conditional.BGGComplex.Term B p))
+#check (KhanSL2.Conditional.psi_above_injective : ∀ B p : ℕ, B < p →
+  Function.Injective (KhanSL2.Conditional.psi B p))
+#print axioms KhanSL2.BGGBridge.bggTerm_eq_bot_of_lt
+#print axioms KhanSL2.Conditional.psi_above_injective
+
+open scoped KhanSL2.Conditional
+#check (KhanSL2.Conditional.BGGComplex.coefficientAction : ∀ B p : ℕ,
+  KhanSL2.Conditional.CoefficientRing B →ₐ[ℂ]
+    Module.End ℂ (KhanSL2.Conditional.BGGComplex.Term B p))
+#check (KhanSL2.Conditional.BGGComplex.differential_smul : ∀ (B p : ℕ)
+  (a : KhanSL2.Conditional.CoefficientRing B) (x : KhanSL2.Conditional.BGGComplex.Term B (p+1)),
+  KhanSL2.Conditional.BGGComplex.differential B p (a • x) =
+    a • KhanSL2.Conditional.BGGComplex.differential B p x)
+#check (KhanSL2.Conditional.canonicalComparison_smul : ∀ (B p : ℕ)
+  (a : KhanSL2.Conditional.CoefficientRing B) (x : KhanSL2.Conditional.BGGHomology B p),
+  KhanSL2.Conditional.canonicalComparison B p (a • x) =
+    a • KhanSL2.Conditional.canonicalComparison B p x)
+#check (KhanSL2.Conditional.bggHomologyEquiv : ∀ B p : ℕ,
+  KhanSL2.Conditional.BGGHomology B p ≃ₗ[KhanSL2.Conditional.CoefficientRing B]
+    KhanSL2.Conditional.K B p)
+example (B p : ℕ) (x : KhanSL2.Conditional.BGGHomology B p) :
+  KhanSL2.Conditional.bggHomologyEquiv B p x =
+    KhanSL2.Conditional.canonicalComparison B p x := rfl
+example : KhanSL2.Conditional.PolynomialBGGInput =
+    (∀ B : ℕ, KhanSL2.Conditional.BGGPolynomialProperties B) := rfl
+#print axioms KhanSL2.Conditional.BGGComplex.differential_smul
+#print axioms KhanSL2.Conditional.canonicalComparison_smul
+#print axioms KhanSL2.Conditional.bggHomologyEquiv
+
+-- The polynomial properties are now proved without a remaining-input hypothesis.
+example (B : ℕ) : KhanSL2.Conditional.BGGPolynomialProperties B :=
+  KhanSL2.Conditional.polynomialBGGInput B
+#check (KhanSL2.PolynomialBGG.bggTerm_finite : ∀ B p : ℕ,
+  Module.Finite (KhanSL2.Conditional.CoefficientRing B)
+    (KhanSL2.Conditional.BGGComplex.Term B p))
+#check (KhanSL2.PolynomialBGG.bggTerm_projective : ∀ B p : ℕ,
+  Module.Projective (KhanSL2.Conditional.CoefficientRing B)
+    (KhanSL2.Conditional.BGGComplex.Term B p))
+#check (KhanSL2.Conditional.mainStatement_of_collisionSupport :
+  KhanSL2.Conditional.CollisionSupportStep → KhanSL2.MainStatement)
+#print axioms KhanSL2.PolynomialBGG.rootPolynomial_free
+#print axioms KhanSL2.PolynomialBGG.bggTerm_finite
+#print axioms KhanSL2.PolynomialBGG.bggTerm_projective
+#print axioms KhanSL2.Conditional.mainStatement_of_collisionSupport
+
+-- These statements have no polynomial-module or remaining-input hypothesis.
+#check (KhanSL2.Conditional.topTermEquiv : ∀ B : ℕ,
+  KhanSL2.Conditional.BGGComplex.Term B B ≃ₗ[KhanSL2.Conditional.CoefficientRing B]
+    KhanSL2.Conditional.CoefficientRing B)
+#check (KhanSL2.Conditional.psi_top_injective : ∀ B : ℕ,
+  Function.Injective (KhanSL2.Conditional.psi B B))
+#print axioms KhanSL2.Conditional.topTermEquiv
+#print axioms KhanSL2.Conditional.BGGComplex.topGenerator_surjective
+#print axioms KhanSL2.Conditional.psi_top_injective
+
+-- The low-degree step is a proved theorem and is no longer a field of RemainingInputs.
+#check (KhanSL2.lowDegreeStep : KhanSL2.Conditional.LowDegreeStep)
+example (hC : KhanSL2.Conditional.CollisionSupportStep) :
+    KhanSL2.Conditional.RemainingInputs := ⟨hC⟩
+#print axioms KhanSL2.lowDegreeStep
+
+-- These endpoints have no remaining polynomial-module hypothesis.
+#check (KhanSL2.PolynomialBGG.rootPolynomial_free : ∀ B : ℕ,
+  Module.Free (KhanSL2.Depth.RB B) (KhanSL2.PolynomialBGG.RootPolynomial B))
+#check (KhanSL2.Conditional.bgg_top_differential_zero : ∀ B : ℕ, 0 < B →
+  KhanSL2.Conditional.bggDifferential B (B-1) = 0)
+#check (KhanSL2.Conditional.psi_injective_of_collisionSupport :
+  KhanSL2.Conditional.CollisionSupportStep → ∀ B p : ℕ,
+    Function.Injective (KhanSL2.Conditional.psi B p))
+#check (KhanSL2.Conditional.psiB_bijective_of_collisionSupport :
+  KhanSL2.Conditional.CollisionSupportStep → ∀ B p : ℕ,
+    Function.Bijective (KhanSL2.Modules.psiB B p))
+
+-- The new milestone consists of proved algebraic identities, not an assumed FGT theorem.
+#check KhanSL2.Macdonald.milestoneGenerators
+#print axioms KhanSL2.Macdonald.milestoneGenerators
+
+-- The merged endpoint retains the original phi and only the actual K factorization input.
+#check (KhanSL2.Collision.mainStatement_of_kFactor :
+  (∀ B, KhanSL2.Collision.KFactor B) → KhanSL2.MainStatement)
+#check KhanSL2.StrongMacdonald.harm_free
+#check KhanSL2.StrongMacdonald.harmEquivCohom
+#print axioms KhanSL2.Collision.mainStatement_of_kFactor
+#print axioms KhanSL2.StrongMacdonald.harm_free
+#print axioms KhanSL2.StrongMacdonald.harmEquivCohom

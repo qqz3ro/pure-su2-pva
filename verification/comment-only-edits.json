@@ -1,0 +1,24 @@
+{
+  "format": "sl2-comment-only-edits-v1",
+  "description": "Exactly one balanced documentation block comment was replaced in each listed file. All bytes outside those comments are unchanged; no mathematical declaration, proof, import, or executable audit was changed.",
+  "edits": {
+    "KhanSL2/Modules.lean": {
+      "before": "/-!\n# Source dual, coefficient action, and the specified polynomial comparison\n\n`sourceDualEquiv` identifies the restricted dual of the actual source with the\nactual weighted-root polynomial module `JB`. The actual coefficient shifts on\nrelative CE chains descend to commuting operators on `KTotal`; the first `B`\npower sums define its `R B` action. `psiBLinear` equips exactly the existing\nTaylor comparison `psiB` with proved `R B`-linearity and is surjective.\n\n`depthJBEquiv` reconciles the imported depth module with this same polynomial\nmodule via elementary symmetric coordinates. `kTotalEquivBGG` identifies the\nactual homology with the assembled BGG homology. Applying depth descent to that\ncomplex still requires its finite projective presentation and kernel-support\nhypotheses. The main isomorphism proposition remains unproved.\n-/",
+      "after": "/-!\n# Source dual, coefficient action, and the specified polynomial comparison\n\n`sourceDualEquiv` identifies the restricted dual of the actual source with the\nactual weighted-root polynomial module `JB`. The actual coefficient shifts on\nrelative CE chains descend to commuting operators on `KTotal`; the first `B`\npower sums define its `R B` action. `psiBLinear` equips exactly the existing\nTaylor comparison `psiB` with proved `R B`-linearity and is surjective.\n\n`depthJBEquiv` reconciles the imported depth module with this same polynomial\nmodule via elementary symmetric coordinates. `kTotalEquivBGG` identifies the\nactual homology with the assembled BGG homology. The finite projective\npresentation and kernel-support results used in depth descent are proved in\n`PolynomialBGG` and `Collision`. The complete isomorphism theorem is in\n`MainProof`.\n-/",
+      "original_sha256": "f2929a1cd9e6d9a375a60d7bd12c07e587abe7ac8dc4226bf786c23700e4d637",
+      "current_sha256": "d4245031ec4c9b0549863b93c075a3dcc431aa8b8c590f2144093f6370697bd3"
+    },
+    "KhanSL2/Conditional.lean": {
+      "before": "/-!\n# The original specified-map theorem from collision support alone\n\n`Conditional.RemainingInputs` has one field: the middle-degree collision-support\ninduction step. `Conditional.mainStatement_of_collisionSupport` proves the original\n`MainStatement` directly from that step. No proof of collision support is asserted.\n\nThe actual BGG resolution and coefficient-homology comparison, canonical coefficient\naction and linearity, finite generation and projectivity of all BGG terms,\nrank-one top term, above-degree vanishing, depth descent, low-degree deformation\nstep, and finite-dimensional duality are proved. The distinct-evaluation/Teleman\nbranch needed to establish collision support remains open.\n-/",
+      "after": "/-!\n# Assembly of the specified-map theorem from collision support\n\n`Conditional.mainStatement_of_collisionSupport` proves `MainStatement` from\nmiddle-degree collision support. It assembles the relative BGG resolution,\ncoefficient actions and linearity, finite projectivity, the rank-one top term,\ndepth descent, low-degree deformation, and finite-dimensional duality.\n\nThe required collision support follows from the factorization proved in\n`KhanSL2.Collision.Proof`. `MainProof` supplies this proved input and concludes\nthe unconditional theorem for the specified canonical map.\n-/",
+      "original_sha256": "d6805bc69d29767f301f1cf0e9c1d915877a2798ad7a27738f1f3ceb894d556e",
+      "current_sha256": "2a118f7af87bde6e3e3c2839a66448ea62f16c8912a29ec7f554e60a9e753554"
+    },
+    "KhanSL2/CE.lean": {
+      "before": "/-- Boundaries as a subspace of the cycle space.\n\nThe intersection is built into `comap`, so this definition itself needs no\nunproved assertion that the CE differential squares to zero. The final\nstatement explicitly includes that identity and preservation of invariants.\nUnder those identities, this is exactly the usual relative CE cohomology.\n-/",
+      "after": "/-- Boundaries as a subspace of the cycle space.\n\nThe intersection is built into `comap`, so this definition itself needs no\nunproved assertion that the CE differential squares to zero. Square-zero\nand preservation of invariants are proved in `CEComplex`. Under those\nidentities, this is exactly the usual relative CE cycles-modulo-boundaries\nquotient.\n-/",
+      "original_sha256": "f4645739da3e4ae514a776ef60577827851c64e354a0d3b5ea4ecbce1d9b4d87",
+      "current_sha256": "2513a1971d017957c2c729ec5ac67514a42634f040a245092988ff667cbf56da"
+    }
+  }
+}

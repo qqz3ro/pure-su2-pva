@@ -1,0 +1,57 @@
+{
+  "release": "vfinal",
+  "package_version": "1.0.0",
+  "completed_utc": "2026-10-27T13:46:20.3346214Z",
+  "main_theorem": "KhanSL2.mainStatement : KhanSL2.MainStatement",
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "native_build": {
+    "status": "passed",
+    "log": "final-source-build.log",
+    "standard_lake_cache_reuse": true
+  },
+  "standalone_audits": {
+    "status": "passed",
+    "count": 20,
+    "completed_utc": "2026-10-27T13:39:13.6463127Z",
+    "log": "native-build.log"
+  },
+  "final_interface_audit": {
+    "status": "passed",
+    "module": "FinalAudit",
+    "log": "final-source-build.log"
+  },
+  "source_preservation": {
+    "status": "passed",
+    "original_lean_files": 1046,
+    "byte_identical_files": 1043,
+    "comment_only_corrected_files": 3,
+    "mathematical_code_changed": false
+  },
+  "frozen_specification": {
+    "status": "validated",
+    "files": 1049,
+    "sha256": "3dfcdee24cbebfdbb9e5496295a797a52d7c4718e020808b8e0f36389b5a1fc1"
+  },
+  "sandboxed_comparator": {
+    "status": "not_run",
+    "reason": "Requires Linux sandboxing; unavailable in this Windows execution environment."
+  },
+  "native_export": {
+    "status": "passed",
+    "bytes": 992435302,
+    "elapsed_seconds": 164.625,
+    "sha256": "cdc701c34114abc6442f4040982a1d156b1be1bff0a84c58348446718364c1d4",
+    "included_in_source_release": false
+  },
+  "native_export_replay": {
+    "status": "inconclusive",
+    "reason": "Trial terminated after 300.14 seconds without a checker verdict."
+  },
+  "all_external_kernels": {
+    "status": "not_run"
+  }
+}
