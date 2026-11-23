@@ -1,7 +1,7 @@
 # Paper
 
 [Lie Algebra Cohomology and Seiberg-Witten Theory](Pure_SU2_PVA_Proof.pdf),
-Ahsan Z. Khan, working draft dated October 25, 2026.
+Ahsan Z. Khan, working draft dated November 23, 2026.
 
 The supplied PDF is included unchanged. The main formalization target is
 **Theorem 1.1**, with the differential algebra presentation in equation (1.3),
